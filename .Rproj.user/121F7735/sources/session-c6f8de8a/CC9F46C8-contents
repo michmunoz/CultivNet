@@ -1,0 +1,178 @@
+### FUNCIONES ###
+
+
+suma <- function (x,y) {
+  resultado <- x + y
+  return (resultado)
+}
+
+
+suma (12,4)
+
+resta <- function (x,y) {
+  resultado <- x - y
+  return (resultado)
+}
+
+
+resta (12,4)
+
+
+
+division <- function (x,y) {
+  
+  resultado <- x / y
+  return (resultado)
+}
+
+
+division (12,4)
+
+
+producto <- function (x,y) {
+  resultado <- x * y
+  return (resultado)
+}
+
+
+producto (12,4)
+
+
+
+### funcion para ecuaciones cuadráticas
+
+solucion <- function(a,b,c) {
+  
+  
+  if ( det >0) {
+    print ("la ecuación tiene dos soluciones reales")
+    print ("las soluciones son =")
+    paste ((-b - sqrt ((b^2) - (4 * a * c )))/(2*a), 
+           (-b + sqrt ((b^2) - (4 * a * c )))/(2*a))
+  } else if ( det ==0) {
+    print ("la ecuación tiene una sola solución real")
+    print ("x=")
+    (-b + sqrt ((b^2) - (4 * a * c )))/(2*a)
+  } else if ( det<0) {
+    print ("la ecuación no tiene soluciones reales, solo imaginarias, esto debido a que es necesario emplear números complejos para resolverla")
+  } 
+  
+  
+}
+
+
+
+solucion (1,2,1)
+
+
+### ejercicios de notas de r cap 9
+
+media <- function (a,b,c,d,e,f) {
+  vector <- as.numeric( c(a,b,c,d,e,f))
+  return (mean (vector))
+}
+
+
+media (2,2,2,2,2,2)
+
+
+m <-  matrix (c(6,8,10,12), nrow=2, byrow=TRUE)
+
+determinante <- function (m) {
+  return (det (m))
+}
+
+
+determinante (m)
+
+
+transpuesta <- function (m) {
+  return (t (m))
+}
+
+transpuesta (m)
+
+
+
+tasa_crecimiento <- function (a,b,c) {
+  
+  return ( log(abs((b-a)/c)))
+}
+
+tasa_crecimiento(2.5,2,36)
+
+
+
+#### super poderes
+
+
+super <- data.frame(
+  personaje = c("Nemo", "Patricio", "Jonny Bravo", "Cosmo", "Rapunzel", "Homero",
+                "Angelica Pickles","Dexter","Blanca Nieves", "Spiderman"),
+  poder = c(12,78,347,298,231,56,542,789,362,788)
+  
+)
+
+super
+
+
+mi_poder <- function (){
+  personaje <- (readline (prompt = "a partir del objeto super escoje tu personaje favorito: "))
+  if ( (personaje == "nemo"| personaje == "Nemo" )) {
+    print ("tu poder es de 12, tu aleta feliz no te sirve de mucho...")
+  } else if (( personaje == "patricio"| personaje == "Patricio"  )) {
+    print ("tienes 78 puntos de poder, deberías salir mas de tu piedra...")
+  } else if ( ( personaje == "jonny bravo"| personaje == "Jonny Bravo" )) {
+    print ("tu poder es de 347, el gimnasio no es suficiente, hasta Blanca Nieves es mas fuerte que tu")
+  } else if ((personaje == "homero"| personaje == "Homero" )) {
+    print ("ay Homero!, eres casi igual de débil que Nemo")
+  } else if ((personaje == "Rapunzel"| personaje == "rapunzel" )) {
+    print ("Felicidades! puedes sobrevivir con tus 231 puntos de poder y tu largo cabello")
+  }else if ((personaje == "cosmo"| personaje == "Cosmo" )) {
+    print ("tienes 298 puntos de poder, aunque todos sabemos que Wanda es mas poderosa")
+  }else if ((personaje == "blanca nieves"| personaje == "Blanca Nieves" )) {
+    print ("comunicarte con los animales te hace mas fuerte que Jonny Bravo")
+  }else if ((personaje == "angelica pickles"| personaje == "Angelica Pickles" )) {
+    print ("la manipulación da ciertas ventajas, tienes 542 puntos de poder")
+  }else if ((personaje == "spiderman"| personaje == "Spiderman" )) {
+    print ("un gran poder conlleva una gran responsabilidad, pero aún con tus 788 puntos de poder no es suficiente")
+  }else if ((personaje == "dexter"| personaje == "Dexter" )) {
+    print ("Dexter eres el mas poderoso!!!, tus 789 puntos de poder son gracias a tu bata de laboratorio")
+  }
+
+
+}
+
+
+mi_poder()
+
+
+#### IMC
+
+
+imc <- function (){
+  name <- (readline (prompt = "cuál es tu nombre?: "))
+  peso <- as.numeric (readline (prompt = "cuál es tu peso? (responde en el orden de kilogramos por favor): "))
+  altura <- as.numeric (readline (prompt = "cuánto mides? (responde en el orden de metros por favor): "))
+  imc <- peso / (altura^2)
+  imc
+  if ( imc <18.5 ) {
+    print (paste (name, ", estas bajo de peso"))
+  } else if ( imc >=18.5 & imc< 25 ) {
+    print (paste (name, ", te encuentras dentro de los rangos normales de peso"))
+  } else if ( imc >=25 & imc <30) {
+    print (paste (name, ", tu IMC indica sobrepeso"))
+  } else if ( imc >=30) {
+    print (paste (name, ", tu IMC indica que padeces de obesidad"))
+  }
+  
+}
+
+
+imc ()
+
+
+
+
+
+
