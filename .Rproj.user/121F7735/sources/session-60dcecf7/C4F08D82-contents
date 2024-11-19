@@ -143,14 +143,52 @@ generob <- function(){
     foto (26)
   } else if ((genero == "shigella" | genero == "Shigella")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
-    print ( base [13, ])
+    print ( base [14, ])
     foto (26)
-  } else if ((genero == "salmonella" | genero == "Salmonella")){
+  } else if ((genero == "klebsiella" | genero == "Klebsiella")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
-    print ( base [3, ])
-    print ( base [4, ])
-    print ( base [5, ])
-    print ( base [6, ])
+    print ( base [15, ])
+    foto (26)
+<<<<<<< HEAD
+  }
+}
+=======
+  } else if ((genero == "streptococcus" | genero == "Streptococcus")){
+    print ("aquí tienes un poco de información que te puede ser de utilidad")
+    print ( base [16, ])
+    foto (26)
+  } else if ((genero == "bacteroides" | genero == "Bacteroides")){
+    print ("aquí tienes un poco de información que te puede ser de utilidad")
+    print ( base [17, ])
+    foto (26)
+  } else if ((genero == "listeria" | genero == "Listeria")){
+    print ("aquí tienes un poco de información que te puede ser de utilidad")
+    print ( base [18, ])
+    foto (26)
+  } else if ((genero == "vibrio" | genero == "Vibrio")){
+    print ("aquí tienes un poco de información que te puede ser de utilidad")
+    print ( base [19, ])
+    foto (26)
+  } else if ((genero == "enterococcus" | genero == "Enterococcus")){
+    print ("aquí tienes un poco de información que te puede ser de utilidad")
+    print ( base [20, ])
+    print ( base [21, ])
+    foto (26)
+  } else if ((genero == "rhizobium" | genero == "Rhizobium")){
+    print ("aquí tienes un poco de información que te puede ser de utilidad")
+    print ( base [22, ])
+    print ( base [23, ])
+    foto (26)
+  } else if ((genero == "acinetobacter" | genero == "Acinetobacter")){
+    print ("aquí tienes un poco de información que te puede ser de utilidad")
+    print ( base [24, ])
+    print ( base [25, ])
+    foto (26)
+  } else if ((genero == "bifidobacterium" | genero == "Enterococcus")){
+    print ("aquí tienes un poco de información que te puede ser de utilidad")
+    print ( base [20, ])
+    print ( base [21, ])
     foto (26)
   }
 }
+>>>>>>> 04f111f068f34ee27607c57cd6470f88ea20924b
