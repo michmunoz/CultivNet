@@ -10,43 +10,43 @@
 # Vazquez Ricardez Xymena
 
 ######## BIENVENIDO A CULTIVNET #########
+
 #Hemos desarrollado este programa para ayudarte en tu transcurso como Microbiólogo(a), 
 #a continuación, te dejamos algunas indicaciones que tienes que tener en cuenta
 #antes de ingresar ...
 
 # 1. Debes ingresar el microorganismo del que te gustaría obtener información 
 #    (actualmente nuestra base solo contiene hongos y bacterias).
-# 2. Si ya sabes con que microrganismo trabajaras puedes ingresarlo como entrada o simplemente responder que no.
+# 2. Si ya sabes con que microrganismo trabajarás puedes ingresarlo como entrada o simplemente responder que no.
 # 3. Por ultimo debes ingresar tu tipo de muestra y a partir de ahí se desplegará una lista de los posibles hongo o bacteria que puedan 
 #    estar en tu muestra o te arrogará información específica del organismo con el que anteriormente mencionaste 
 #    que trabajarías. 
 
 
+
+
+## Leer la base de datos
 base <- read.csv("datos/base.csv")
 View (base)
 
 
-## Aquí comienza la función
+## Correr las funciones necesarias para ejecutar el programa
 
+# función que corresponde a la visualización de las fotos
+install.packages("jpeg")
+install.packages("grid")
 
-cultivnet <- function () {
-  micro <- (readline (prompt = "Muy bien, comenzaremos por preguntar qué tipo de
-                          microorganismo te gustaria observar o encontrar, tenemos datos 
-                          disponibles para bacterias y hongos, escribe cuál de los te interesa: "))
-  if ( (micro == "bacterias"| micro == "bacteria" | micro == "Bacteria" | micro == "Bacterias" )) {
-    bacteria ()
-  } else if ( (micro == "hongos"| micro == "hongos" | micro == "Hongos" | micro == "Hongo" )) {
-    hongo ()
-  } else {
-    print ("Lo sentimos, esa entrada no es válida para este programa, estamos actualizando los
-           datos para tener una amplia diversidad de microorganismos dentro, gracias!!")
-  }
-  
+library(jpeg)
+library(grid)
+
+foto <- function (a) {
+  imagen <- readJPEG(paste0("datos/fotos microorganismos/",a,".jpeg"))
+  grid.raster(imagen)
 }
 
-cultivnet()
+foto(9)
 
-
+# función para trabajar exclusivamente con bacterias
 
 bacteria <- function () {
   bac <- readline (prompt = "ahora, ya sabes en sí qué genero de bacterias quieres observar?,
@@ -60,7 +60,7 @@ bacteria <- function () {
   
 }
 
-
+# función para trabajar exclusivamente con hongos
 
 hongo <- function () {
   hon <- readline (prompt = "ahora, ya sabes en sí qué género de hongos quieres observar?,
@@ -73,6 +73,8 @@ hongo <- function () {
     generoh ()
   }
 }
+
+# función para trabajar con la diversidad en bacterias
 
 diversidadb <- function(){ 
   muestra <- readline (prompt = "entonces, lo que necesitas es conocer la diversidad dentro de una muestra,
@@ -93,6 +95,7 @@ diversidadb <- function(){
   }  
 }
 
+# función para trabajar con la diversidad en bacterias
 
 diversidadh <- function(){ 
   muestra <- readline (prompt = "entonces, lo que necesitas es conocer la diversidad dentro de una muestra,
@@ -102,7 +105,7 @@ diversidadh <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [90, ])
     foto (52)
-  } else if ((muestra == "aliemento" | muestra == "alimentos" | muestra == "Alimento" | muestra == "Alimentos")){
+  } else if ((muestra == "alimento" | muestra == "alimentos" | muestra == "Alimento" | muestra == "Alimentos")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [92, ])
     foto (52)
@@ -113,67 +116,75 @@ diversidadh <- function(){
   }  
 }
 
+#función generob para conocer las necesidades del usiario y proporcionar la infomación de las bacterias
 
-
-generob <- function(){ 
-  muestra <- readline (prompt = "Para buscar especificamente por genero, escribe el nombre de aquel de tu interés, 
+generob <- function(){
+  tipo_de_muestra <- readline (prompt = "Tienes algún tipo de muestra que te gustaría evaluar? Tenemos disponibilidad de 
+                               muestras de frotis, líquido, raices y suelo. Por favor escribe el tipo de muestra (si no tienes un
+                               tipo de muestra en específico escribe la palabra no): ")
+  
+  genero <- readline (prompt = "Para buscar especificamente por genero, escribe el nombre de aquel de tu interés, 
                        actualmente poseemos información de 25 géneros de bacterias:")
-  if (( genero == "escherichia" | genero == "Escherichia")){
+  
+  observacion <- readline (prompt = "en cuanto a qué es lo que quieres observar, te gustaria ver la presencia o aislar exclusivamente
+                           a este microorganismo? (si no lo tienes definifo aún, escribe no)" )
+  
+  if (( genero == "escherichia" | genero == "Escherichia" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [1, ])
     print ( base [2, ])
     foto (1)
-  } else if(( genero == "escherichia" | genero == "Escherichia" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis")){
+  } else if(( genero == "escherichia" | genero == "Escherichia" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis" & observacion == "presencia" | observacion == "Presencia")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [1, ])
     foto (1)
-  } else if(( genero == "escherichia" | genero == "Escherichia" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido")){
+  } else if(( genero == "escherichia" | genero == "Escherichia" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido" & observacion == "presencia" |observacion == "Presencia")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [2, ])
     foto (1)
-  } else if ((genero == "salmonella" | genero == "Salmonella")){
+  } else if ((genero == "salmonella" | genero == "Salmonella" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [3, ])
     print ( base [4, ])
     print ( base [5, ])
     print ( base [6, ])
     foto (2)
-  } else if ((genero == "salmonella" | genero == "Salmonella" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis")){
+  } else if ((genero == "salmonella" | genero == "Salmonella" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis" & observacion == "no" | observacion == "No")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [3, ])
     print ( base [4, ])
     foto (2)
-  } else if ((genero == "salmonella" | genero == "Salmonella" & observacion == "aislar" | observacion == "Aislar")){
+  } else if ((genero == "salmonella" | genero == "Salmonella" & observacion == "aislar" | observacion == "Aislar" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis")){
     print ( base [3, ])
     foto (2)
-  } else if ((genero == "salmonella" | genero == "Salmonella" & observacion == "aislar" | observacion == "Aislar")){
+  } else if ((genero == "salmonella" | genero == "Salmonella" & observacion == "presencia" | observacion == "Presencia" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis")){
     print ( base [5, ])
     foto (2)
-  } else if ((genero == "salmonella" | genero == "Salmonella" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido")){
+  } else if ((genero == "salmonella" | genero == "Salmonella" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido" & observacion == "No" | observacion == "no")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [4, ])
     print ( base [6, ])
     foto (2)
-  } else if ((genero == "salmonella" | genero == "Salmonella" & observacion == "presencia" | observacion == "Prescencia")){
+  } else if ((genero == "salmonella" | genero == "Salmonella" & observacion == "aislar" | observacion == "aislar" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido")){
     print ( base [4, ])
     foto (2)
-  } else if ((genero == "salmonella" | genero == "Salmonella" & observacion == "presencia" | observacion == "Prescencia")){
+  } else if ((genero == "salmonella" | genero == "Salmonella" & observacion == "presencia" | observacion == "Prescencia" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido")){
     print ( base [6, ])
     foto (2)
   } else if ((genero == "clostridium" | genero == "Clostridium")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [7, ])
     foto (3)
-  } else if ((genero == "pseudomonas" | genero == "Pseudomonas")){
+  } else if ((genero == "pseudomonas" | genero == "Pseudomonas" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & obsevacion == "no" | observacion == "No")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [8, ])
     print ( base [9, ])
     foto (4)
-  } else if ((genero == "pseudomonas" | genero == "Pseudomonas" & observacion == "presencia" | observacion == "Presencia")){
+  } else if ((genero == "pseudomonas" | genero == "Pseudomonas" & observacion == "presencia" | observacion == "Presencia" & tipo_de_muestra == "Líquido" | tipo_de_muestra == "líquido")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [8, ])
     foto (4)
-  } else if ((genero == "pseudomonas" | genero == "Pseudomonas" & observacion == "aislar" | observacion == "Aislar")){
+  } else if ((genero == "pseudomonas" | genero == "Pseudomonas" & observacion == "aislar" | observacion == "Aislar" & tipo_de_muestra == "Líquido" | tipo_de_muestra == "líquido")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [9, ])
     foto (4)
@@ -181,16 +192,16 @@ generob <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [10, ])
     foto (5)
-  } else if ((genero == "proteus" | genero == "Proteus")){
+  } else if ((genero == "proteus" | genero == "Proteus" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [11, ])
     print ( base [12, ])
     foto (6)
-  } else if ((genero == "proteus" | genero == "Proteus" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis")){
+  } else if ((genero == "proteus" | genero == "Proteus" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis" & observacion == "Aislar" | observacion == "aislar" )){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [11, ])
     foto (6)
-  } else if ((genero == "proteus" | genero == "Proteus" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido")){
+  } else if ((genero == "proteus" | genero == "Proteus" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido" & observacion == "Aislar" | observacion == "aislar" )){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [12, ])
     foto (6)
@@ -222,42 +233,42 @@ generob <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [19, ])
     foto (13)
-  } else if ((genero == "enterococcus" | genero == "Enterococcus")){
+  } else if ((genero == "enterococcus" | genero == "Enterococcus" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [20, ])
     print ( base [21, ])
     foto (14)
-  } else if ((genero == "enterococcus" | genero == "Enterococcus" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido")){
+  } else if ((genero == "enterococcus" | genero == "Enterococcus" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido" & observacion == "aislar" | observacion== "Aislar")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [20, ])
     foto (14)
-  } else if ((genero == "enterococcus" | genero == "Enterococcus" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis")){
+  } else if ((genero == "enterococcus" | genero == "Enterococcus" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis" & observacion == "aislar" | observacion== "Aislar")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [21, ])
     foto (14)
-  } else if ((genero == "rhizobium" | genero == "Rhizobium")){
+  } else if ((genero == "rhizobium" | genero == "Rhizobium" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [22, ])
     print ( base [23, ])
     foto (15)
-  } else if ((genero == "rhizobium" | genero == "Rhizobium" & tipo_de_muestra == "raices" | tipo_de_muestra == "Raices")){
+  } else if ((genero == "rhizobium" | genero == "Rhizobium" & tipo_de_muestra == "raices" | tipo_de_muestra == "Raices" & observacion == "aislar" | observacion== "Aislar")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [22, ])
     foto (15)
-  } else if ((genero == "rhizobium" | genero == "Rhizobium" & tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo")){
+  } else if ((genero == "rhizobium" | genero == "Rhizobium" & tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo" & observacion == "aislar" | observacion== "Aislar")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [23, ])
     foto (15)
-  } else if ((genero == "acinetobacter" | genero == "Acinetobacter")){
+  } else if ((genero == "acinetobacter" | genero == "Acinetobacter" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [24, ])
     print ( base [25, ])
     foto (16)
-  } else if ((genero == "acinetobacter" | genero == "Acinetobacter" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis")){
+  } else if ((genero == "acinetobacter" | genero == "Acinetobacter" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis" & observacion == "aislar" | observacion== "Aislar")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [24, ])
     foto (16)
-  } else if ((genero == "acinetobacter" | genero == "Acinetobacter" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido")){
+  } else if ((genero == "acinetobacter" | genero == "Acinetobacter" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido" & observacion == "presencia" | observacion== "Presencia")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [25, ])
     foto (16)
@@ -269,29 +280,29 @@ generob <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [27, ])
     foto (18)
-  } else if ((genero == "serratia" | genero == "Serratia")){
+  } else if ((genero == "serratia" | genero == "Serratia" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [28, ])
     print ( base [29, ])
     foto (19)
-  } else if ((genero == "serratia" | genero == "Serratia" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido")){
+  } else if ((genero == "serratia" | genero == "Serratia" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido" & observacion == "aislar" | observacion== "Aislar")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [28, ])
     foto (19)
-  } else if ((genero == "serratia" | genero == "Serratia" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis")){
+  } else if ((genero == "serratia" | genero == "Serratia" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis" & observacion == "aislar" | observacion== "Aislar")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [29, ])
     foto (19)
-  } else if ((genero == "lactobacillus" | genero == "Lactobacillus")){
+  } else if ((genero == "lactobacillus" | genero == "Lactobacillus" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [30, ])
     print ( base [31, ])
     foto (20)
-  } else if ((genero == "lactobacillus" | genero == "Lactobacillus" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido")){
+  } else if ((genero == "lactobacillus" | genero == "Lactobacillus" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido" & observacion == "aislar" | observacion== "Aislar")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [30, ])
     foto (20)
-  } else if ((genero == "lactobacillus" | genero == "Lactobacillus" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis")){
+  } else if ((genero == "lactobacillus" | genero == "Lactobacillus" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis" & observacion == "aislar" | observacion== "Aislar")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [31, ])
     foto (20)
@@ -316,12 +327,13 @@ generob <- function(){
     print ( base [36, ])
     foto (25)
 }else{
-  print("Lo siento, por el momento no poseemos información sobre ese género, 
+  print("Lo siento, por el momento no poseemos información sobre eso, 
         espera nuestras próximas actualizaciones")
 }
 
 }
 
+#función generoh para conocer las necesidades del usiario y proporcionar la infomación de los hongos
 
 generoh <- function(){ 
   muestra <- readline (prompt = "Para buscar especificamente por género, escribe el nombre de aquel de tu interés, 
@@ -658,3 +670,32 @@ generoh <- function(){
         espera nuestras próximas actualizaciones")
   }
 }
+
+
+
+#### FUNCIÓN PARA EJECUTAR EL PROGRAMA
+
+cultivnet <- function () {
+  micro <- (readline (prompt = "Muy bien, comenzaremos por preguntar qué tipo de
+                          microorganismo te gustaria observar o encontrar, tenemos datos 
+                          disponibles para bacterias y hongos, escribe cuál de los te interesa: "))
+  if ( (micro == "bacterias"| micro == "bacteria" | micro == "Bacteria" | micro == "Bacterias" )) {
+    bacteria ()
+  } else if ( (micro == "hongos"| micro == "hongos" | micro == "Hongos" | micro == "Hongo" )) {
+    hongo ()
+  } else {
+    print ("Lo sentimos, esa entrada no es válida para este programa, estamos actualizando los
+           datos para tener una amplia diversidad de microorganismos dentro, gracias!!")
+  }
+  
+}
+
+
+
+#### EJECUTAR EL PROGRAMA
+
+cultivnet()
+
+
+
+
