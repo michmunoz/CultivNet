@@ -3,7 +3,7 @@
     "path": "~/CultivNet/script/CultivNet code.R",
     "project_path": "script/CultivNet code.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "3650737106",
     "contents": "",
     "dirty": false,
     "created": 1731963377738.0,
@@ -13,15 +13,15 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "84,0",
-        "scrollLine": "0"
+        "cursorPosition": "111,0",
+        "scrollLine": "95"
     },
-    "folds": "65|26|82|0|\n",
-    "lastKnownWriteTime": 1731970847,
+    "folds": "",
+    "lastKnownWriteTime": 1731975660,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1731970850716,
+    "last_content_update": 1731975761233,
     "read_only": false,
     "read_only_alternatives": []
 }
