@@ -1,27 +1,27 @@
 {
-    "id": "C4F08D82",
-    "path": "~/CultivNet/script/CultivNet code.R",
-    "project_path": "script/CultivNet code.R",
+    "id": "46AA4E1A",
+    "path": "~/CultivNet/script/fotos.R",
+    "project_path": "script/fotos.R",
     "type": "r_source",
-    "hash": "3650737106",
+    "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1731963377738.0,
+    "created": 1731900577481.0,
     "source_on_save": false,
-    "relative_order": 2,
+    "relative_order": 1,
     "properties": {
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "111,0",
-        "scrollLine": "95"
+        "cursorPosition": "16,0",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1731975660,
+    "lastKnownWriteTime": 1731975542,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1731975761233,
+    "last_content_update": 1731975542330,
     "read_only": false,
     "read_only_alternatives": []
 }
