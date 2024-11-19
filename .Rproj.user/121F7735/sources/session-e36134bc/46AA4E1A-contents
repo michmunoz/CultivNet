@@ -13,4 +13,4 @@ foto <- function (a) {
   grid.raster(imagen)
 }
 
-foto(2)
+foto(9)
