@@ -1,6 +1,6 @@
 id,organismo,genero ,caracteristicas,tipo de muestra,obsevacion,medio,temperatura,tiempo,preparacion
-1,bacteria,escherichia,"Gram negativos, bacilos, anaerobia facultativa, localizada en intestino",frotis,prescencia,Agar líquido LB,36°C - 37° C,17h - 19h,Tinción de Gram para clasifcación
-1,bacteria,escherichia,"Gram negativos, bacilos, anaerobia facultativa, localizada en intestino",líquido,prescencia,Agar líquido LB,36°C - 37° C,17h - 19h,Tinción de Gram para clasifcación
+1,bacteria,escherichia,"Gram negativos, bacilos, anaerobia facultativa, localizada en intestino",frotis,presencia,Agar líquido LB,36°C - 37° C,17h - 19h,Tinción de Gram para clasifcación
+1,bacteria,escherichia,"Gram negativos, bacilos, anaerobia facultativa, localizada en intestino",líquido,presencia,Agar líquido LB,36°C - 37° C,17h - 19h,Tinción de Gram para clasifcación
 2,bacteria,salmonella,"Gram negativos, bacilos, anaerobia facultativa, localizada en intestino",frotis,aislar,MacConkey o SS,36°C - 37° C,24h - 48h,"Observación en el microscopio, campo claro"
 2,bacteria,salmonella,"Gram negativos, bacilos, anaerobia facultativa, localizada en intestino",líquido,aislar,MacConkey o SS,36°C - 37° C,24h - 48h,"Observación en el microscopio, campo claro"
 2,bacteria,salmonella,"Gram negativos, bacilos, anaerobia facultativa, localizada en intestino",frotis,presencia,LB ,36°C - 37° C,24h - 48h,Tinción de Gram para clasifcación
@@ -11,7 +11,7 @@ id,organismo,genero ,caracteristicas,tipo de muestra,obsevacion,medio,temperatur
 5,bacteria,staphylococcus,"Gram postivos,  cocos, anaerobios facultativos, localizados en mucosa y piel de mamiferos",frotis,presencia,Agar sangre,36°C - 37° C,24h - 48h,Tinción de Gram para clasifcación
 6,bacteria,proteus,"Gram negativos, bacilos, anaerbios facultativos, localizados en el tracto urinario ",frotis,aislar,Agar sangre o MacConkey,36°C - 37° C,24h - 48h,"Observación en el microscopio, campo claro"
 6,bacteria,proteus,"Gram negativos, bacilos, anaerbios facultativos, localizados en el tracto urinario ",líquido,aislar,Agar sangre o MacConkey,36°C - 37° C,24h - 48h,"Observación en el microscopio, campo claro"
-7,bacteria,bacillus,"Gram positivos, bacilos, anaerobios facultativos o aerobios estrictos, localizados en el suelo",líquido,presencia,Agar LB,36°C - 37° C,24h - 48h,Tinción de Gram para clasifcación
+13,bacteria,bacillus,"Gram positivos, bacilos, anaerobios facultativos o aerobios estrictos, localizados en el suelo",líquido,presencia,Agar LB,36°C - 37° C,24h - 48h,Tinción de Gram para clasifcación
 8,bacteria,shigella,"Gram negativos, bacilos, anaerobios facultativos, localizados en la mucosa intestinal",líquido,aislar,Agar SS,36°C - 37° C,24h - 48h,"Observación en el microscopio, campo claro"
 9,bacteria,klebsiella,"Gram negativos, bacilos, anaerobios facultativos, localizados en el cuerpo humano",líquido,presencia,Agar nutritivo,36°C - 37° C,24h - 48h,Tinción de Gram para clasifcación
 10,bacteria,streptococcus,"Gram positivos, cocos, anaerobios facultativos, localizados en el cuerpo humano",frotis,aislar,Agar KF o medio Todd-Hewitt,36°C - 37° C,24h - 48h,"Observación en el microscopio, campo claro"
