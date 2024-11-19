@@ -67,7 +67,7 @@ diversidadb <- function(){
   muestra <- readline (prompt = "entonces, lo que necesitas es conocer la diversidad dentro de una muestra,
                        pero dinos, de qué tipo es tu muestra?, tenemos datos para muestra en formato liquido, frotis
                        o de suelo: ")
-  if (( muestra == "liquido" | muestra == "líquido" | muestra == "Liquido" | muestra== "Liquido")){
+  if (( muestra == "liquido" | muestra == "líquido" | muestra == "Líquido" | muestra== "Liquido")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [37, ])
     foto (26)
@@ -87,11 +87,11 @@ diversidadh <- function(){
   muestra <- readline (prompt = "entonces, lo que necesitas es conocer la diversidad dentro de una muestra,
                        pero dinos, de qué tipo es tu muestra?, tenemos datos para muestra en formato liquido, alimentos
                        o de suelo: ")
-  if (( muestra == "liquido" | muestra == "líquido" | muestra == "Liquido" | muestra== "Liquido")){
+  if (( muestra == "liquido" | muestra == "líquido" | muestra == "Líquido" | muestra== "Liquido")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [90, ])
     foto (52)
-  } else if ((muestra == "aliemnto" | muestra == "alimentos" | muestra == "Alimento" | muestra == "Alimentos")){
+  } else if ((muestra == "aliemento" | muestra == "alimentos" | muestra == "Alimento" | muestra == "Alimentos")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [92, ])
     foto (52)
@@ -101,6 +101,8 @@ diversidadh <- function(){
     foto (52)
   }  
 }
+
+
 
 generob <- function () {
   
