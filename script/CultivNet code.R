@@ -9,7 +9,18 @@
 # Muñoz Navarrtete Daniela Michelle
 # Vazquez Ricardez Xymena
 
-### escribir las indicaciones y descripcion del programa
+######## BIENVENIDO A CULTIVNET #########
+#Hemos desarrollado este programa para ayudarte en tu transcurso como Microbiólogo(a), 
+#a continuación, te dejamos algunas indicaciones que tienes que tener en cuenta
+#antes de ingresar ...
+
+# 1. Debes ingresar el microorganismo del que te gustaría obtener información 
+#    (actualmente nuestra base solo contiene hongos y bacterias).
+# 2. Si ya sabes con que microrganismo trabajaras puedes ingresarlo como entrada o simplemente responder que no.
+# 3. Por ultimo debes ingresar tu tipo de muestra y a partir de ahí se desplegará una lista de los posibles hongo o bacteria que puedan 
+#    estar en tu muestra o te arrogará información específica del organismo con el que anteriormente mencionaste 
+#    que trabajarías. 
+
 
 base <- read.csv("datos/base.csv")
 View (base)
