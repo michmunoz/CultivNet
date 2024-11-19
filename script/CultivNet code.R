@@ -4,6 +4,7 @@
 ###########################################
 
 ### BIOINFOMÁTICA ###
+##ESTO ES PARA CHECAR NADA MÁS
 
 # Banda Zamora Jimena
 # Muñoz Navarrtete Daniela Michelle
