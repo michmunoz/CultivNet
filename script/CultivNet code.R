@@ -44,7 +44,7 @@ foto <- function (a) {
   grid.raster(imagen)
 }
 
-foto(48)
+foto(9)
 
 # función para trabajar exclusivamente con bacterias
 
@@ -59,7 +59,7 @@ bacteria <- function () {
   }
   
 }
-
+bacteria()
 # función para trabajar exclusivamente con hongos
 
 hongo <- function () {
@@ -90,7 +90,7 @@ diversidadb <- function(){
     foto (26)
   } else if ((muestra == "suelo" | muestra == "Suelo")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
-    print ( as.list (base [39, ]))
+    print ( base [39, ])
     foto (26)
   }  
 }
@@ -119,143 +119,139 @@ diversidadh <- function(){
 #función generob para conocer las necesidades del usiario y proporcionar la infomación de las bacterias
 
 generob <- function(){
-  tipo_de_muestra <- readline (prompt = "Tienes algún tipo de muestra que te gustaría evaluar? Tenemos disponibilidad de 
-                               muestras de frotis, líquido, raices y suelo. Por favor escribe el tipo de muestra (si no tienes un
-                               tipo de muestra en específico escribe la palabra no): ")
+  tipo_de_muestra <- readline (prompt = "Tienes algún tipo de muestra que te gustaría evaluar? Tenemos disponibilidad demuestras de frotis, líquido, raices y suelo. Por favor escribe el tipo de muestra (si no tienes un tipo de muestra en específico escribe la palabra no): ")
   
-  genero <- readline (prompt = "Para buscar especificamente por genero, escribe el nombre de aquel de tu interés, 
-                       actualmente poseemos información de 25 géneros de bacterias:")
+  genero <- readline (prompt = "Para buscar especificamente por genero, escribe el nombre de aquel de tu interés, actualmente poseemos información de 25 géneros de bacterias:")
   
-  observacion <- readline (prompt = "en cuanto a qué es lo que quieres observar, te gustaria ver la presencia o aislar exclusivamente
-                           a este microorganismo? (si no lo tienes definifo aún, escribe no)" )
+  sobservacion <- readline (prompt = "en cuanto a qué es lo que quieres observar, te gustaria ver la presencia o aislar exclusivamente a este microorganismo? (si no lo tienes definifo aún, escribe no)" )
   
-  if (( (genero == "escherichia" | genero == "Escherichia") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (observacion == "no" | observacion == "No"))){
+  if ((( genero == "escherichia" | genero == "Escherichia" )&( tipo_de_muestra == "no" | tipo_de_muestra == "No") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [1, ])
     print ( base [2, ])
     foto (1)
-  } else if(( (genero == "escherichia" | genero == "Escherichia") & (tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis") & (observacion == "presencia" | observacion == "Presencia"))){
+  } else if(((genero == "escherichia" | genero == "Escherichia") & (tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis") & (observacion == "presencia" | observacion == "Presencia"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [1, ])
     foto (1)
-  } else if(( (genero == "escherichia" | genero == "Escherichia") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido") & (observacion == "presencia" |observacion == "Presencia") )){
+  } else if(((genero == "escherichia" | genero == "Escherichia") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido" )& (observacion == "presencia" |observacion == "Presencia"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [2, ])
     foto (1)
-  } else if (((genero == "salmonella" | genero == "Salmonella") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (observacion == "no" | observacion == "No"))){
+  } else if (((genero == "salmonella" | genero == "Salmonella" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [3, ])
     print ( base [4, ])
     print ( base [5, ])
     print ( base [6, ])
     foto (2)
-  } else if (((genero == "salmonella" | genero == "Salmonella") & (tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis") & (observacion == "no" | observacion == "No"))){
+  } else if (((genero == "salmonella" | genero == "Salmonella" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis" & observacion == "no" | observacion == "No")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [3, ])
     print ( base [4, ])
     foto (2)
-  } else if (((genero == "salmonella" | genero == "Salmonella") & (observacion == "aislar" | observacion == "Aislar") & (tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis"))){
+  } else if (((genero == "salmonella" | genero == "Salmonella" & observacion == "aislar" | observacion == "Aislar" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis")){
     print ( base [3, ])
     foto (2)
-  } else if (((genero == "salmonella" | genero == "Salmonella") & (observacion == "presencia" | observacion == "Presencia") & (tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis"))){
+  } else if (((genero == "salmonella" | genero == "Salmonella" & observacion == "presencia" | observacion == "Presencia" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis")){
     print ( base [5, ])
     foto (2)
-  } else if (((genero == "salmonella" | genero == "Salmonella") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido") & (observacion == "No" | observacion == "no"))){
+  } else if (((genero == "salmonella" | genero == "Salmonella" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido" & observacion == "No" | observacion == "no")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [4, ])
     print ( base [6, ])
     foto (2)
-  } else if (((genero == "salmonella" | genero == "Salmonella") & (observacion == "aislar" | observacion == "aislar") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido"))){
+  } else if (((genero == "salmonella" | genero == "Salmonella" & observacion == "aislar" | observacion == "aislar" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido")){
     print ( base [4, ])
     foto (2)
-  } else if (((genero == "salmonella" | genero == "Salmonella") & (observacion == "presencia" | observacion == "Prescencia") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido"))){
+  } else if (((genero == "salmonella" | genero == "Salmonella" & observacion == "presencia" | observacion == "Prescencia" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido")){
     print ( base [6, ])
     foto (2)
-  } else if ((genero == "clostridium" | genero == "Clostridium")){
+  } else if (((genero == "clostridium" | genero == "Clostridium")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [7, ])
     foto (3)
-  } else if ((genero == "pseudomonas" | genero == "Pseudomonas" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & obsevacion == "no" | observacion == "No")){
+  } else if (((genero == "pseudomonas" | genero == "Pseudomonas" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & obsevacion == "no" | observacion == "No")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [8, ])
     print ( base [9, ])
     foto (4)
-  } else if ((genero == "pseudomonas" | genero == "Pseudomonas" & observacion == "presencia" | observacion == "Presencia" & tipo_de_muestra == "Líquido" | tipo_de_muestra == "líquido")){
+  } else if (((genero == "pseudomonas" | genero == "Pseudomonas" & observacion == "presencia" | observacion == "Presencia" & tipo_de_muestra == "Líquido" | tipo_de_muestra == "líquido")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [8, ])
     foto (4)
-  } else if ((genero == "pseudomonas" | genero == "Pseudomonas" & observacion == "aislar" | observacion == "Aislar" & tipo_de_muestra == "Líquido" | tipo_de_muestra == "líquido")){
+  } else if (((genero == "pseudomonas" | genero == "Pseudomonas" & observacion == "aislar" | observacion == "Aislar" & tipo_de_muestra == "Líquido" | tipo_de_muestra == "líquido")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [9, ])
     foto (4)
-  } else if ((genero == "staphylococcus" | genero == "Staphylococcus")){
+  } else if (((genero == "staphylococcus" | genero == "Staphylococcus")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [10, ])
     foto (5)
-  } else if ((genero == "proteus" | genero == "Proteus" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
+  } else if (((genero == "proteus" | genero == "Proteus" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [11, ])
     print ( base [12, ])
     foto (6)
-  } else if ((genero == "proteus" | genero == "Proteus" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis" & observacion == "Aislar" | observacion == "aislar" )){
+  } else if (((genero == "proteus" | genero == "Proteus" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis" & observacion == "Aislar" | observacion == "aislar" )){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [11, ])
     foto (6)
-  } else if ((genero == "proteus" | genero == "Proteus" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido" & observacion == "Aislar" | observacion == "aislar" )){
+  } else if (((genero == "proteus" | genero == "Proteus" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido" & observacion == "Aislar" | observacion == "aislar" )){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [12, ])
     foto (6)
-  } else if ((genero == "bacillus" | genero == "Bacillus")){
+  } else if (((genero == "bacillus" | genero == "Bacillus")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [13, ])
     foto (7)
-  } else if ((genero == "shigella" | genero == "Shigella")){
+  } else if (((genero == "shigella" | genero == "Shigella")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [14, ])
     foto (8)
-  } else if ((genero == "klebsiella" | genero == "Klebsiella")){
+  } else if (((genero == "klebsiella" | genero == "Klebsiella")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [15, ])
     foto (9)
-  } else if ((genero == "streptococcus" | genero == "Streptococcus")){
+  } else if (((genero == "streptococcus" | genero == "Streptococcus")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [16, ])
     foto (10)
-  } else if ((genero == "bacteroides" | genero == "Bacteroides")){
+  } else if (((genero == "bacteroides" | genero == "Bacteroides")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [17, ])
     foto (11)
-  } else if ((genero == "listeria" | genero == "Listeria")){
+  } else if (((genero == "listeria" | genero == "Listeria")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [18, ])
     foto (12)
-  } else if ((genero == "vibrio" | genero == "Vibrio")){
+  } else if (((genero == "vibrio" | genero == "Vibrio")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [19, ])
     foto (13)
-  } else if ((genero == "enterococcus" | genero == "Enterococcus" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
+  } else if (((genero == "enterococcus" | genero == "Enterococcus" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [20, ])
     print ( base [21, ])
     foto (14)
-  } else if ((genero == "enterococcus" | genero == "Enterococcus" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido" & observacion == "aislar" | observacion== "Aislar")){
+  } else if (((genero == "enterococcus" | genero == "Enterococcus" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido" & observacion == "aislar" | observacion== "Aislar")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [20, ])
     foto (14)
-  } else if ((genero == "enterococcus" | genero == "Enterococcus" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis" & observacion == "aislar" | observacion== "Aislar")){
+  } else if (((genero == "enterococcus" | genero == "Enterococcus" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis" & observacion == "aislar" | observacion== "Aislar")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [21, ])
     foto (14)
-  } else if ((genero == "rhizobium" | genero == "Rhizobium" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
+  } else if (((genero == "rhizobium" | genero == "Rhizobium" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [22, ])
     print ( base [23, ])
     foto (15)
-  } else if ((genero == "rhizobium" | genero == "Rhizobium" & tipo_de_muestra == "raices" | tipo_de_muestra == "Raices" & observacion == "aislar" | observacion== "Aislar")){
+  } else if (((genero == "rhizobium" | genero == "Rhizobium" & tipo_de_muestra == "raices" | tipo_de_muestra == "Raices" & observacion == "aislar" | observacion== "Aislar")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [22, ])
     foto (15)
-  } else if ((genero == "rhizobium" | genero == "Rhizobium" & tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo" & observacion == "aislar" | observacion== "Aislar")){
+  } else if (((genero == "rhizobium" | genero == "Rhizobium" & tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo" & observacion == "aislar" | observacion== "Aislar")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [23, ])
     foto (15)
@@ -289,11 +285,11 @@ generob <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [28, ])
     foto (19)
-  } else if ((genero == "serratia" | genero == "Serratia" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis" & observacion == "aislar" | observacion== "Aislar")){
+  } else if ((genero == "serratia" | genero == "Serratia" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis" & obsevacion == "aislar" | observacion== "Aislar")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [29, ])
     foto (19)
-  } else if ((genero == "lactobacillus" | genero == "Lactobacillus" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
+  } else if ((genero == "lactobacillus" | genero == "Lactobacillus" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & obsevacion == "no" | observacion == "No")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [30, ])
     print ( base [31, ])
@@ -333,6 +329,7 @@ generob <- function(){
 
 }
 
+generob()
 #función generoh para conocer las necesidades del usiario y proporcionar la infomación de los hongos
 
 generoh <- function(){ 
@@ -344,16 +341,16 @@ generoh <- function(){
     print ( base [41, ])
     print ( base [42, ])
     foto (27)
-  } else if(( genero == "aspergillus" | genero == "Aspergillus" & tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & obsevacion == "no" | observacion == "No")){
+  } else if(( genero == "aspergillus" | genero == "Aspergillus" & tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [40, ])
     print ( base [41, ])
     foto (27)
-  } else if(((genero == "aspergillus" | genero == "Aspergillus") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (observacion == "esporulacion" | obervacion == "Esporulacion"))){
+  } else if(( genero == "aspergillus" | genero == "Aspergillus" & observacion == "esporulacion" | obervacion == "Esporulacion")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [40, ])
     foto (27)
-  } else if(((genero == "aspergillus" | genero == "Aspergillus") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (observacion == "presencia" | tipo_de_muestra == "Presencia"))){
+  } else if(( genero == "aspergillus" | genero == "Aspergillus" & observacion == "presencia" | tipo_de_muestra == "Presencia")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [41, ])
     foto (27)
@@ -361,39 +358,39 @@ generoh <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [42, ])
     foto (27)
-  } else if ((genero == "Rhizopus" | genero == "Rhizopus"& tipo_de_muestra == "no" | tipo_de_muestra == "No" & obsevacion == "no" | observacion == "No")){
+  } else if ((genero == "Rhizopus" | genero == "Rhizopus")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [43, ])
     print ( base [44, ])
     foto (28)
-  } else if (((genero == "Rhizopus" | genero == "Rhizopus") & (tipo_de_muestra == "alimentos" | tipo_de_muestra == "Alimentos") & (observacion == "esporulacion" | observacion == "Esporulacion"))){
+  } else if ((genero == "Rhizopus" | genero == "Rhizopus" & observacion == "esporulacion" | observacion == "Esporulacion")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [43, ])
     foto (28)
-  } else if (((genero == "Rhizopus" | genero == "Rhizopus") & (tipo_de_muestra == "alimentos" | tipo_de_muestra == "Alimentos") & (observacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "Rhizopus" | genero == "Rhizopus" & observacion == "presencia" | observacion == "Presencia")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [44, ])
     foto (28)
-  } else if ((genero == "sacharomyces" | genero == "Sacharomyces" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & obsevacion == "no" | observacion == "No")){
-    print ("aquí tienes un poco de info(rmación que te puede ser de utilidad")
+  } else if ((genero == "sacharomyces" | genero == "Sacharomyces")){
+    print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [45, ])
     print ( base [46, ])
     print ( base [47, ])
     foto (29)
-  } else if (((genero == "sacharomyces" | genero == "Sacharomyces") & (observacion == "presencia" | observacion == "Presencia") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido"))){
+  } else if ((genero == "sacharomyces" | genero == "Sacharomyces" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [45, ])
     foto (29)
-  } else if ((genero == "sacharomyces" | genero == "Sacharomyces" & tipo_de_muestra == "alimentos" | tipo_de_muestra == "Alimentos" & obsevacion == "no" | observacion == "No")){
+  } else if ((genero == "sacharomyces" | genero == "Sacharomyces" & tipo_de_muestra == "alimentos" | tipo_de_muestra == "Alimentos")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [46, ])
     print ( base [47, ])
     foto (29)
-  } else if (((genero == "sacharomyces" | genero == "Sacharomyces") & (tipo_de_muestra == "alimentos" | tipo_de_muestra == "Alimentos") & (observacion == "esporulacion" | observacion == "Esporulacion"))){
+  } else if ((genero == "sacharomyces" | genero == "Sacharomyces" & obervacion == "esporulacion" | obervacion == "Esporulacion")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [46, ])
     foto (29)
-  } else if (((genero == "sacharomyces" | genero == "Sacharomyces") & (tipo_de_muestra == "alimentos" | tipo_de_muestra == "Alimentos") & (observacion == "presencia" | obervacion == "Presencia"))){
+  } else if ((genero == "sacharomyces" | genero == "Sacharomyces" & obervacion == "presencia" | obervacion == "Presencia")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [47, ])
     foto (29)
@@ -401,119 +398,119 @@ generoh <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [48, ])
     foto (30)
-  } else if ((genero == "ustilago" | genero == "Ustilago" & tipo_de_muestra == "alimentos" | tipo_de_muestra == "Alimentos" & obsevacion == "no" | observacion == "No")){
+  } else if ((genero == "ustilago" | genero == "Ustilago")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [49, ])
     print ( base [50, ])
     foto (31)
-  } else if (((genero == "ustilago" | genero == "Ustilago") & (tipo_de_muestra == "suelos" | tipo_de_muestra == "Suelos") & (observacion == "esporulacion" | observacion == "Esporulacion"))){
+  } else if ((genero == "ustilago" | genero == "Ustilago" & tipo_de_muestra == "suelos" | tipo_de_muestra == "Suelos")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [49, ])
     foto (31)
-  } else if (((genero == "ustilago" | genero == "Ustilago") & (tipo_de_muestra == "granos" | tipo_de_muestra == "Granos") & (observacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "ustilago" | genero == "Ustilago" & tipo_de_muestra == "granos" | tipo_de_muestra == "Granos")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [50, ])
     foto (31)
-  } else if ((genero == "fusarium" | genero == "Fusarium" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & obsevacion == "no" | observacion == "No")){
+  } else if ((genero == "fusarium" | genero == "Fusarium")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [51, ])
     print ( base [52, ])
     foto (32)
-  } else if (((genero == "fusarium" | genero == "Fusarium") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (observacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "fusarium" | genero == "Fusarium" & tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [51, ])
     foto (32)
-  } else if (((genero == "fusarium" | genero == "Fusarium") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido") & (observacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "fusarium" | genero == "Fusarium" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [52, ])
     foto (32)
-  } else if ((genero == "candida" | genero == "Candida" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & obsevacion == "no" | observacion == "No")){
+  } else if ((genero == "candida" | genero == "Candida")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [53, ])
     print ( base [54, ])
     foto (33)
-  } else if (((genero == "candida" | genero == "Candida") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido") & (observacion == "esporulacion" | observacion == "Esporulacion"))){
+  } else if ((genero == "candida" | genero == "Candida" & obervacion == "esporulacion" | observacion == "Esporulacion")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [53, ])
     foto (33)
-  } else if (((genero == "candida" | genero == "Candida") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido") & (observacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "candida" | genero == "Candida" & obervacion == "presencia" | observacion == "Presencia")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [54, ])
     foto (33)
-  } else if ((genero == "trichoderma" | genero == "Trichoderma" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & obsevacion == "no" | observacion == "No")){
+  } else if ((genero == "trichoderma" | genero == "Trichoderma")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [55, ])
     print ( base [56, ])
     foto (34)
-  } else if (((genero == "trichoderma" | genero == "Trichoderma") & (tipo_de_muestra == "suelos" | tipo_de_muestra == "Suelos") & (observacion == "esporulacion" | observacion == "Esporulacion"))){
+  } else if ((genero == "trichoderma" | genero == "Trichoderma" & observacion == "esporulacion" | observacion == "Esporulacion")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [55, ])
     foto (34)
-  } else if (((genero == "trichoderma" | genero == "Trichoderma") & (tipo_de_muestra == "suelos" | tipo_de_muestra == "Suelos") & (observacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "trichoderma" | genero == "Trichoderma" & observacion == "presencia" | observacion == "Presencia")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [56, ])
     foto (34)
-  } else if ((genero == "penicillium" | genero == "Penicillium" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & obsevacion == "no" | observacion == "No")){
+  } else if ((genero == "penicillium" | genero == "Penicillium")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [57, ])
     print ( base [58, ])
     print ( base [59, ])
     foto (35)
-  } else if (((genero == "penicillium" | genero == "Penicillium") & (tipo_de_muestra == "granos" | tipo_de_muestra == "Granos") & (observacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "penicillium" | genero == "Penicillium" & tipo_de_muestra == "granos" | tipo_de_muestra == "Granos")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [57, ])
     foto (35)
-  } else if ((genero == "penicillium" | genero == "Penicillium" & tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo" & obsevacion == "no" | observacion == "No")){
+  } else if ((genero == "penicillium" | genero == "Penicillium" & tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [58, ])
     print ( base [59, ])
     foto (35)
-  } else if (((genero == "penicillium" | genero == "Penicillium") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (observacion == "esporulacion" | observacion == "Esporulacion"))){
+  } else if ((genero == "penicillium" | genero == "Penicillium" & observacion == "esporulacion" | observacion == "Esporulacion")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [58, ])
     foto (35)
-  } else if (((genero == "penicillium" | genero == "Penicillium") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (observacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "penicillium" | genero == "Penicillium" & observacion == "presencia" | observacion == "Presencia")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [59, ])
     foto (35)
-  } else if ((genero == "alternaria" | genero == "Alternaria" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & obsevacion == "no" | observacion == "No")){
+  } else if ((genero == "alternaria" | genero == "Alternaria")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [60, ])
     print ( base [61, ])
     print ( base [62, ])
     foto (36)
-  } else if (((genero == "alternaria" | genero == "Alternaria") & (tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis") & (observacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "alternaria" | genero == "Alternaria" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [60, ])
     foto (36)
-  } else if (((genero == "alternaria" | genero == "Alternaria") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (obsevacion == "no" | observacion == "No" ))){
+  } else if ((genero == "alternaria" | genero == "Alternaria" & tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [61, ])
     print ( base [62, ])
     foto (36)
-  } else if (((genero == "alternaria" | genero == "Alternaria") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (observacion == "esporulacion" | observacion == "Esporulacion"))){
+  } else if ((genero == "alternaria" | genero == "Alternaria" & observacion == "esporulacion" | observacion == "Esporulacion")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [61, ])
     foto (36)
-  } else if (((genero == "alternaria" | genero == "Alternaria") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (observacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "alternaria" | genero == "Alternaria" & observacion == "presencia" | observacion == "Presencia")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [62, ])
     foto (36)
-  } else if (((genero == "paecilomyces" | genero == "Paecilomyces") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  } else if ((genero == "paecilomyces" | genero == "Paecilomyces")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [63, ])
     print ( base [64, ])
     print ( base [65, ])
     foto (37)
-  } else if (((genero == "paecilomyces" | genero == "Paecilomyces") &  (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido") & (obsevacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "paecilomyces" | genero == "Paecilomyces" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [63, ])
     foto (37)
-  } else if (((genero == "paecilomyces" | genero == "Paecilomyces") & (tipo_de_muestra == "aliemntos" | tipo_de_muestra == "Alimentos") & (obsevacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "paecilomyces" | genero == "Paecilomyces" & tipo_de_muestra == "aliemntos" | tipo_de_muestra == "Alimentos")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [64, ])
     foto (37)
-  } else if (((genero == "paecilomyces" | genero == "Paecilomyces") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (obsevacion == "presencia" | observacion == "Presencia") )){
+  } else if ((genero == "paecilomyces" | genero == "Paecilomyces" & tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [65, ])
     foto (37)
@@ -521,52 +518,52 @@ generoh <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [66, ])
     foto (38)
-  } else if (((genero == "allomyces" | genero == "Allomyces") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  } else if ((genero == "allomyces" | genero == "Allomyces")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [67, ])
     print ( base [68, ])
     foto (39)
-  } else if (((genero == "allomyces" | genero == "Allomyces") & (tipo_de_muestra == "alimentos" | tipo_de_muestras == "Alimentos") & (obsevacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "allomyces" | genero == "Allomyces" & tipo_de_muestra == "alimentos" | tipo_de_muestras == "Alimentos")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [67, ])
     foto (39)
-  } else if (((genero == "allomyces" | genero == "Allomyces") & (tipo_de_muestra == "suelo" | tipo_de_muestras == "Suelo") & (obsevacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "allomyces" | genero == "Allomyces" & tipo_de_muestra == "suelo" | tipo_de_muestras == "Suelo")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [68, ])
     foto (39)
-  } else if (((genero == "pichia" | genero == "Pichia") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  } else if ((genero == "pichia" | genero == "Pichia")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [69, ])
     print ( base [70, ])
     foto (40)
-  } else if (((genero == "pichia" | genero == "Pichia") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido") & (obervacion == "esporulacion" | observacion == "Esporulacion"))){
+  } else if ((genero == "pichia" | genero == "Pichia" & obervacion == "esporulacion" | observacion == "Esporulacion")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [69, ])
     foto (40)
-  } else if (((genero == "pichia" | genero == "Pichia") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido") & (obervacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "pichia" | genero == "Pichia" & obervacion == "presencia" | observacion == "Presencia")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [70, ])
     foto (40)
-  } else if (((genero == "cladosporium" | genero == "Cladosporium") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  } else if ((genero == "cladosporium" | genero == "Cladosporium")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [71, ])
     print ( base [72, ])
     print ( base [73, ])
     foto (41)
-  } else if (((genero == "cladosporium" | genero == "Cladosporium") & (tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis") & (obsevacion == "no" | observacion == "No"))){
+  } else if ((genero == "cladosporium" | genero == "Cladosporium" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [71, ])
     print ( base [72, ])
     foto (41)
-  } else if (((genero == "cladosporium" | genero == "Cladosporium") & (tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis") & (observacion == "esporulacion" | observacion == "Esporulacion"))){
+  } else if ((genero == "cladosporium" | genero == "Cladosporium" & observacion == "esporulacion" | observacion == "Esporulacion")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [71, ])
     foto (41)
-  } else if (((genero == "cladosporium" | genero == "Cladosporium") & (tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis") & (observacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "cladosporium" | genero == "Cladosporium" & observacion == "presencia" | observacion == "Presentacion")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [72, ])
     foto (41)
-  } else if (((genero == "cladosporium" | genero == "Cladosporium") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (observacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "cladosporium" | genero == "Cladosporium" & tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [73, ])
     foto (41)
@@ -574,26 +571,26 @@ generoh <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [74, ])
     foto (42)
-  } else if (((genero == "neurospora" | genero == "Neurospora") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  } else if ((genero == "neurospora" | genero == "Neurospora")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [75, ])
     print ( base [76, ])
     print ( base [77, ])
     foto (43)
-  } else if (((genero == "neurospora" | genero == "Neurospora") & (tipo_de_muestra == "alimentos" | tipo_de_muestra == "Alimentos") & (obsevacion == "presencia" | observacion == "Presencia") )){
+  } else if ((genero == "neurospora" | genero == "Neurospora" & tipo_de_muestra == "alimentos" | tipo_de_muestra == "Alimentos")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [75, ])
     foto (43)
-  } else if (((genero == "neurospora" | genero == "Neurospora") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (obsevacion == "no" | observacion == "No"))){
+  } else if ((genero == "neurospora" | genero == "Neurospora" & tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [76, ])
     print ( base [77, ])
     foto (43)
-  } else if (((genero == "neurospora" | genero == "Neurospora") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (observacion == "esporulacion" | observacion == "Esporulacion"))){
+  } else if ((genero == "neurospora" | genero == "Neurospora" & observacion == "esporulacion" | observacion == "Esporulacion")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [76, ])
     foto (43)
-  } else if (((genero == "neurospora" | genero == "Neurospora") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (observacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "neurospora" | genero == "Neurospora" & observacion == "presencia" | observacion == "Presencia")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [77, ])
     foto (43)
@@ -605,29 +602,29 @@ generoh <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [79, ])
     foto (45)
-  } else if (((genero == "schizosaccharomyces" | genero == "Schizosaccharomyces") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  } else if ((genero == "schizosaccharomyces" | genero == "Schizosaccharomyces")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [80, ])
     print ( base [81, ])
     foto (46)
-  } else if (((genero == "schizosaccharomyces" | genero == "Schizosaccharomyces") & (tipo_de_muestra == "alimentos" | tipo_de_muestra == "Alimentos") & (obsevacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "schizosaccharomyces" | genero == "Schizosaccharomyces" & tipo_de_muestra == "alimentos" | tipo_de_muestra == "Alimentos")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [80, ])
     foto (46)
-  } else if (((genero == "schizosaccharomyces" | genero == "Schizosaccharomyces") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (obsevacion == "presencia" | observacion == "Presencia"))){ 
+  } else if ((genero == "schizosaccharomyces" | genero == "Schizosaccharomyces" & tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [81, ])
     foto (46)
-  } else if (((genero == "geotrichum" | genero == "Geotrichum") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  } else if ((genero == "geotrichum" | genero == "Geotrichum")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [82, ])
     print ( base [83, ])
     foto (47)
-  } else if (((genero == "geotrichum" | genero == "Geotrichum") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (obsevacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "geotrichum" | genero == "Geotrichum" & tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [82, ])
     foto (47)
-  } else if (((genero == "geotrichum" | genero == "Geotrichum") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido") & (obsevacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "geotrichum" | genero == "Geotrichum" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [83, ])
     foto (47)
@@ -635,29 +632,29 @@ generoh <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [84, ])
     foto (48)
-  } else if (((genero == "mucor" | genero == "Mucor") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  } else if ((genero == "mucor" | genero == "Mucor")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [85, ])
     print ( base [86, ])
     foto (49)
-  } else if (((genero == "mucor" | genero == "Mucor") & (tipo_de_muestra == "alimentos" | tipo_de_muestra == "Alimentos") & (observacion == "esporulacion" | observacion == "Esporulacion"))){
+  } else if ((genero == "mucor" | genero == "Mucor" & obervacion == "esporulacion" | observacion == "Esporulacion")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [85, ])
     foto (49)
-  } else if (((genero == "mucor" | genero == "Mucor") & (tipo_de_muestra == "alimentos" | tipo_de_muestra == "Alimentos") & (obervacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "mucor" | genero == "Mucor" & obervacion == "presencia" | observacion == "Presencia")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [86, ])
     foto (49)
-  } else if (((genero == "botrytis" | genero == "Botrytis") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  } else if ((genero == "botrytis" | genero == "Botrytis")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [87, ])
     print ( base [88, ])
     foto (50)
-  } else if (((genero == "botrytis" | genero == "Botrytis") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (observacion == "esporulacion" | observacion == "Esporulacion"))){
+  } else if ((genero == "botrytis" | genero == "Botrytis" & observacion == "esporulacion" | observacion == "Esporulacion")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [87, ])
     foto (50)
-  } else if (((genero == "botrytis" | genero == "Botrytis") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (observacion == "presencia" | observacion == "Presencia"))){
+  } else if ((genero == "botrytis" | genero == "Botrytis" & observacion == "presencia" | observacion == "Presencia")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [88, ])
     foto (50)
