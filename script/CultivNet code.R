@@ -129,46 +129,46 @@ generob <- function(){
   observacion <- readline (prompt = "en cuanto a qué es lo que quieres observar, te gustaria ver la presencia o aislar exclusivamente
                            a este microorganismo? (si no lo tienes definifo aún, escribe no)" )
   
-  if (( genero == "escherichia" | genero == "Escherichia" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
+  if (( (genero == "escherichia" | genero == "Escherichia") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [1, ])
     print ( base [2, ])
     foto (1)
-  } else if(( genero == "escherichia" | genero == "Escherichia" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis" & observacion == "presencia" | observacion == "Presencia")){
+  } else if(( (genero == "escherichia" | genero == "Escherichia") & (tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis") & (observacion == "presencia" | observacion == "Presencia"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [1, ])
     foto (1)
-  } else if(( genero == "escherichia" | genero == "Escherichia" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido" & observacion == "presencia" |observacion == "Presencia")){
+  } else if(( (genero == "escherichia" | genero == "Escherichia") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido") & (observacion == "presencia" |observacion == "Presencia") )){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [2, ])
     foto (1)
-  } else if ((genero == "salmonella" | genero == "Salmonella" & tipo_de_muestra == "no" | tipo_de_muestra == "No" & observacion == "no" | observacion == "No")){
+  } else if (((genero == "salmonella" | genero == "Salmonella") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [3, ])
     print ( base [4, ])
     print ( base [5, ])
     print ( base [6, ])
     foto (2)
-  } else if ((genero == "salmonella" | genero == "Salmonella" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis" & observacion == "no" | observacion == "No")){
+  } else if (((genero == "salmonella" | genero == "Salmonella") & (tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [3, ])
     print ( base [4, ])
     foto (2)
-  } else if ((genero == "salmonella" | genero == "Salmonella" & observacion == "aislar" | observacion == "Aislar" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis")){
+  } else if (((genero == "salmonella" | genero == "Salmonella") & (observacion == "aislar" | observacion == "Aislar") & (tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis"))){
     print ( base [3, ])
     foto (2)
-  } else if ((genero == "salmonella" | genero == "Salmonella" & observacion == "presencia" | observacion == "Presencia" & tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis")){
+  } else if (((genero == "salmonella" | genero == "Salmonella") & (observacion == "presencia" | observacion == "Presencia") & (tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis"))){
     print ( base [5, ])
     foto (2)
-  } else if ((genero == "salmonella" | genero == "Salmonella" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido" & observacion == "No" | observacion == "no")){
+  } else if (((genero == "salmonella" | genero == "Salmonella") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido") & (observacion == "No" | observacion == "no"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( base [4, ])
     print ( base [6, ])
     foto (2)
-  } else if ((genero == "salmonella" | genero == "Salmonella" & observacion == "aislar" | observacion == "aislar" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido")){
+  } else if (((genero == "salmonella" | genero == "Salmonella") & (observacion == "aislar" | observacion == "aislar") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido"))){
     print ( base [4, ])
     foto (2)
-  } else if ((genero == "salmonella" | genero == "Salmonella" & observacion == "presencia" | observacion == "Prescencia" & tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido")){
+  } else if (((genero == "salmonella" | genero == "Salmonella") & (observacion == "presencia" | observacion == "Prescencia") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido"))){
     print ( base [6, ])
     foto (2)
   } else if ((genero == "clostridium" | genero == "Clostridium")){
