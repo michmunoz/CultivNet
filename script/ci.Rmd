@@ -5,9 +5,21 @@ date: "2024-11-20"
 author: "Banda Jimena, Muñoz Daniela Michelle, Vazquez Xymena"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+## 
+
+<u>** FUNCIONES PRINCIPALES ** </u>
+fotos
+
+```{r}
+foto <- function (a) {
+  imagen <- readJPEG(paste0("datos/fotos microorganismos/",a,".jpeg"))
+  grid.raster(imagen)
+}
+
+foto(48)
 ```
 
-## 
+
+##
+
 

@@ -44,7 +44,7 @@ foto <- function (a) {
   grid.raster(imagen)
 }
 
-foto(9)
+foto(48)
 
 # función para trabajar exclusivamente con bacterias
 
