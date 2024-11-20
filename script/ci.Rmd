@@ -1,0 +1,25 @@
+---
+utitle: "CultivNet, Bioinformática 2024-2"
+output: slidy_presentation
+date: "2024-11-20"
+author: "Banda Jimena, Muñoz Daniela Michelle, Vazquez Xymena"
+---
+
+## 
+
+<u>** FUNCIONES PRINCIPALES ** </u>
+fotos
+
+```{r}
+foto <- function (a) {
+  imagen <- readJPEG(paste0("datos/fotos microorganismos/",a,".jpeg"))
+  grid.raster(imagen)
+}
+
+foto(48)
+```
+
+
+##
+
+

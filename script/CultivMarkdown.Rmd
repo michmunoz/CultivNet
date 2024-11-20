@@ -1,0 +1,26 @@
+---
+title: "CultivNet"
+author: "Jimena Banda, Daniela Michelle Muñoz, Xymena Vazquez"
+date: "2024-11-20"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## CultivNet
+
+
+```{r, echo=TRUE, eval=FALSE}
+library(jpeg)
+library(grid)
+
+foto <- function (a) {
+  imagen <- readJPEG(paste0("datos/fotos microorganismos/",a,".jpeg"))
+  grid.raster(imagen)
+}
+
+foto(48)
+```
+
