@@ -338,26 +338,25 @@ generoh <- function(){
   
   observacion <- readline (prompt = "en cuanto a qué es lo que quieres observar, te gustaria ver la presencia o aislar exclusivamente a este microorganismo? (si no lo tienes definido aún, escribe no)" )
 
-  if (( genero == "aspergillus" | genero == "Aspergillus")){
+  if (((genero == "aspergillus" | genero == "Aspergillus") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print (as.list(base [40, ]))
     print (as.list(base [41, ]))
     print (as.list(base [42, ]))
     foto (27)
-  } else if(((genero == "aspergillus" | genero == "Aspergillus") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo"))){
-    print ("aquí tienes un poco de información que te puede ser de utilidad")
+  } else if(((genero == "aspergillus" | genero == "Aspergillus") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (obsevacion == "no" | observacion == "No"))){
     print (as.list(base [40, ]))
     print (as.list(base [41, ]))
     foto (27)
-  } else if(((genero == "aspergillus" | genero == "Aspergillus") & (observacion == "esporulacion" | observacion == "Esporulacion"))){
+  } else if(((genero == "aspergillus" | genero == "Aspergillus") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (observacion == "esporulacion" | obervacion == "Esporulacion"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print (as.list(base [40, ]))
     foto (27)
-  } else if(((genero == "aspergillus" | genero == "Aspergillus") & (observacion == "presencia" | tipo_de_muestra == "Presencia"))){
+  } else if(((genero == "aspergillus" | genero == "Aspergillus") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (observacion == "presencia" | tipo_de_muestra == "Presencia"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print (as.list(base [41, ]))
     foto (27)
-  } else if(((genero == "aspergillus" | genero == "Aspergillus") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido"))){
+  } else if(((genero == "aspergillus" | genero == "Aspergillus") & (tipo_de_muestra == "líquido" | tipo_de_muestra == "Líquido") & (observacion == "presencia" | tipo_de_muestra == "Presencia"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [42, ]))
     foto (27)
