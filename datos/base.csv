@@ -1,4 +1,4 @@
-id,organismo,genero ,caracteristicas,tipo de muestra,obsevacion,medio,temperatura,tiempo,preparacion
+id,organismo,genero ,caracteristicas,tipo de muestra,observacion,medio,temperatura,tiempo,preparacion
 1,bacteria,escherichia,"Gram negativos, bacilos, anaerobia facultativa, localizada en intestino",frotis,presencia,Agar líquido LB,36°C - 37° C,17h - 19h,Tinción de Gram para clasifcación
 1,bacteria,escherichia,"Gram negativos, bacilos, anaerobia facultativa, localizada en intestino",líquido,presencia,Agar líquido LB,36°C - 37° C,17h - 19h,Tinción de Gram para clasifcación
 2,bacteria,salmonella,"Gram negativos, bacilos, anaerobia facultativa, localizada en intestino",frotis,aislar,MacConkey o SS,36°C - 37° C,24h - 48h,"Observación en el microscopio, campo claro"
