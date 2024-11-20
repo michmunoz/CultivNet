@@ -692,7 +692,7 @@ cultivnet <- function () {
 
 
 
-#### EJECUTAR EL PROGRAMA
+#### PARA EJECUTAR EL PROGRAMA 
 
 cultivnet()
 
