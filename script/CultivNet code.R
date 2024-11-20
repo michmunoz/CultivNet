@@ -338,13 +338,13 @@ generoh <- function(){
   
   observacion <- readline (prompt = "en cuanto a qué es lo que quieres observar, te gustaria ver la presencia o aislar exclusivamente a este microorganismo? (si no lo tienes definido aún, escribe no)" )
 
-  if (((genero == "aspergillus" | genero == "Aspergillus") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  if (((genero == "aspergillus" | genero == "Aspergillus") & (tipo.de.muestra == "no" | tipo.de.muestra == "No") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print (as.list(base [40, ]))
     print (as.list(base [41, ]))
     print (as.list(base [42, ]))
     foto (27)
-  } else if(((genero == "aspergillus" | genero == "Aspergillus") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (obsevacion == "no" | observacion == "No"))){
+  } else if(((genero == "aspergillus" | genero == "Aspergillus") & (tipo.de.muestra == "suelo" | tipo.de.muestra == "Suelo") & (observacion == "no" | observacion == "No"))){
     print (as.list(base [40, ]))
     print (as.list(base [41, ]))
     foto (27)
@@ -360,7 +360,7 @@ generoh <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [42, ]))
     foto (27)
-  } else if (((genero == "Rhizopus" | genero == "Rhizopus") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  } else if (((genero == "Rhizopus" | genero == "Rhizopus") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [43, ]))
     print ( base [44, ])
@@ -373,7 +373,7 @@ generoh <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [44, ]))
     foto (28)
-  } else if (((genero == "sacharomyces" | genero == "Sacharomyces") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  } else if (((genero == "sacharomyces" | genero == "Sacharomyces") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [45, ]))
     print ( as.list(base [46, ]))
@@ -383,7 +383,7 @@ generoh <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [45, ]))
     foto (29)
-  } else if (((genero == "sacharomyces" | genero == "Sacharomyces") & (tipo_de_muestra == "alimentos" | tipo_de_muestra == "Alimentos") & (obsevacion == "no" | observacion == "No"))){
+  } else if (((genero == "sacharomyces" | genero == "Sacharomyces") & (tipo_de_muestra == "alimentos" | tipo_de_muestra == "Alimentos") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print (as.list( base [46, ]))
     print ( as.list(base [47, ]))
@@ -400,7 +400,7 @@ generoh <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [48, ]))
     foto (30)
-  } else if (((genero == "ustilago" | genero == "Ustilago") & (tipo_de_muestra == "alimentos" | tipo_de_muestra == "Alimentos") & (obsevacion == "no" | observacion == "No"))){
+  } else if (((genero == "ustilago" | genero == "Ustilago") & (tipo_de_muestra == "alimentos" | tipo_de_muestra == "Alimentos") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [49, ]))
     print ( as.list(base [50, ]))
@@ -413,7 +413,7 @@ generoh <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [50, ]))
     foto (31)
-  } else if (((genero == "fusarium" | genero == "Fusarium") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  } else if (((genero == "fusarium" | genero == "Fusarium") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [51, ]))
     print ( as.list(base [52, ]))
@@ -426,7 +426,7 @@ generoh <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [52, ]))
     foto (32)
-  } else if (((genero == "candida" | genero == "Candida") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  } else if (((genero == "candida" | genero == "Candida") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [53, ]))
     print ( as.list(base [54, ]))
@@ -439,7 +439,7 @@ generoh <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [54, ]))
     foto (33)
-  } else if (((genero == "trichoderma" | genero == "Trichoderma") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  } else if (((genero == "trichoderma" | genero == "Trichoderma") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [55, ]))
     print ( as.list(base [56, ]))
@@ -452,7 +452,7 @@ generoh <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [56, ]))
     foto (34)
-  } else if (((genero == "penicillium" | genero == "Penicillium") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  } else if (((genero == "penicillium" | genero == "Penicillium") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [57, ]))
     print ( as.list(base [58, ]))
@@ -462,7 +462,7 @@ generoh <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [57, ]))
     foto (35)
-  } else if (((genero == "penicillium" | genero == "Penicillium") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (obsevacion == "no" | observacion == "No"))){
+  } else if (((genero == "penicillium" | genero == "Penicillium") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [58, ]))
     print ( as.list(base [59, ]))
@@ -485,7 +485,7 @@ generoh <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [60, ]))
     foto (36)
-  } else if (((genero == "alternaria" | genero == "Alternaria") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (obsevacion == "no" | observacion == "No" ))){
+  } else if (((genero == "alternaria" | genero == "Alternaria") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (observacion == "no" | observacion == "No" ))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [61, ]))
     print ( as.list(base [62, ]))
