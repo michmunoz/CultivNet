@@ -90,7 +90,7 @@ diversidadb <- function(){
     foto (26)
   } else if ((muestra == "suelo" | muestra == "Suelo")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
-    print ( base [39, ])
+    print ( as.list (base [39, ]))
     foto (26)
   }  
 }
