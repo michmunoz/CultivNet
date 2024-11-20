@@ -530,15 +530,151 @@ Jimena Banda, Daniela Michelle Muñoz, Xymena Vazquez
 </div>
 <div id="cultivnet" class="slide section level2">
 <h1>CultivNet</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(jpeg)</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>foto <span class="ot">&lt;-</span> <span class="cf">function</span> (a) {</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>  imagen <span class="ot">&lt;-</span> <span class="fu">readJPEG</span>(<span class="fu">paste0</span>(<span class="st">&quot;datos/fotos microorganismos/&quot;</span>,a,<span class="st">&quot;.jpeg&quot;</span>))</span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>  <span class="fu">grid.raster</span>(imagen)</span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>}</span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="fu">foto</span>(<span class="dv">48</span>)</span></code></pre></div>
+<p><strong>Objetivos:</strong></p>
+<ul>
+<li>Crear un código sencillo de emplear y entender con fines aplicables
+dentro de la licenciatura en Microbiología</li>
+<li>Aplicar los conocimientos adquiridos dentro del curso para
+desarrollar una herramienta de ayuda en otras materias</li>
+</ul>
+<p><strong>Qué es CultivNet?</strong></p>
+<ul>
+<li>Es una herramienta que proporciona características básicas para el
+manejo de bacterias y hongos en un laboratorio de docencia a nivel
+licenciatura</li>
+<li>La base de datos de CultivNet cuenta con los 50 organismos más
+empleados en laboratorios de bioseguridad nivel 1, o bien en
+laboratorios de docencia</li>
+<li>Proporciona informacion de los medios y condiciones de cultivo con
+respecto al género, tipo de muestra a emplear y objetivo u observación
+que se quiere realizar</li>
+</ul>
+</div>
+<div id="base-de-datos" class="slide section level2">
+<h1>Base de datos</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>base <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;datos/base.csv&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">View</span> (base)</span></code></pre></div>
+<ul>
+<li>25 géneros de bacterias</li>
+<li>25 géneros de hongos</li>
+<li>92 renglones, 9 columnas:</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>id</li>
+<li>organismo</li>
+<li>género</li>
+<li>características</li>
+<li>tipo de muestra</li>
+<li>observación</li>
+<li>medio</li>
+<li>temperatura</li>
+<li>preparación</li>
+</ol>
+</div>
+<div id="funciones" class="slide section level2">
+<h1>Funciones</h1>
+<h3 id="para-desplegar-la-imagen-correspondiente-en-la-pestaña-de-plots">Para
+desplegar la imagen correspondiente en la pestaña de Plots</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(jpeg)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>foto <span class="ot">&lt;-</span> <span class="cf">function</span> (a) {</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  imagen <span class="ot">&lt;-</span> <span class="fu">readJPEG</span>(<span class="fu">paste0</span>(<span class="st">&quot;datos/fotos microorganismos/&quot;</span>,a,<span class="st">&quot;.jpeg&quot;</span>))</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  <span class="fu">grid.raster</span>(imagen)</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>}</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="fu">foto</span>(<span class="dv">48</span>)</span></code></pre></div>
+</div>
+<div id="funciones-1" class="slide section level2">
+<h1>Funciones</h1>
+<h3 id="definiendo-el-organismo">Definiendo el organismo</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>bacteria <span class="ot">&lt;-</span> <span class="cf">function</span> () {</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  bac <span class="ot">&lt;-</span> <span class="fu">readline</span> (<span class="at">prompt =</span> <span class="st">&quot;ahora, ya sabes en sí qué genero de bacterias quieres observar?,</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="st">                   recuerda que te daremos la información a nivel de género.</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="st">                   Por favor introduce el género, si no tienes alguno en específico solo escribe no : &quot;</span> )</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  <span class="cf">if</span> ((bac <span class="sc">==</span> <span class="st">&quot;no&quot;</span> <span class="sc">|</span> bac<span class="sc">==</span><span class="st">&quot;No&quot;</span>)) {</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>    <span class="fu">diversidadb</span> ()</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>    <span class="fu">generob</span> ()</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>  }</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>  </span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>}</span></code></pre></div>
+<ul>
+<li>Se realizó para hongos y bacterias</li>
+</ul>
+</div>
+<div id="funciones-2" class="slide section level2">
+<h1>Funciones</h1>
+<h3 id="para-trabajar-con-la-diversidad-esto-al-no-tener-un-género-específico-pero-sí-un-tipo-de-organismo">Para
+trabajar con la diversidad, esto al no tener un género específico, pero
+sí un tipo de organismo</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>diversidadh <span class="ot">&lt;-</span> <span class="cf">function</span>(){ </span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>  muestra <span class="ot">&lt;-</span> <span class="fu">readline</span> (<span class="at">prompt =</span> <span class="st">&quot;entonces, lo que necesitas es conocer la diversidad dentro de una muestra,</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="st">                       pero dinos, de qué tipo es tu muestra?, tenemos datos para muestra en formato liquido, alimentos</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="st">                       o de suelo: &quot;</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>  <span class="cf">if</span> (( muestra <span class="sc">==</span> <span class="st">&quot;liquido&quot;</span> <span class="sc">|</span> muestra <span class="sc">==</span> <span class="st">&quot;líquido&quot;</span> <span class="sc">|</span> muestra <span class="sc">==</span> <span class="st">&quot;Líquido&quot;</span> <span class="sc">|</span> muestra<span class="sc">==</span> <span class="st">&quot;Liquido&quot;</span>)){</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>    <span class="fu">print</span> (<span class="st">&quot;aquí tienes un poco de información que te puede ser de utilidad&quot;</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>    <span class="fu">print</span> ( base [<span class="dv">90</span>, ])</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>    <span class="fu">foto</span> (<span class="dv">52</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> ((muestra <span class="sc">==</span> <span class="st">&quot;alimento&quot;</span> <span class="sc">|</span> muestra <span class="sc">==</span> <span class="st">&quot;alimentos&quot;</span> <span class="sc">|</span> muestra <span class="sc">==</span> <span class="st">&quot;Alimento&quot;</span> <span class="sc">|</span> muestra <span class="sc">==</span> <span class="st">&quot;Alimentos&quot;</span>)){</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>    <span class="fu">print</span> (<span class="st">&quot;aquí tienes un poco de información que te puede ser de utilidad&quot;</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>    <span class="fu">print</span> ( base [<span class="dv">92</span>, ])</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>    <span class="fu">foto</span> (<span class="dv">52</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> ((muestra <span class="sc">==</span> <span class="st">&quot;suelo&quot;</span> <span class="sc">|</span> muestra <span class="sc">==</span> <span class="st">&quot;Suelo&quot;</span>)){</span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>    <span class="fu">print</span> (<span class="st">&quot;aquí tienes un poco de información que te puede ser de utilidad&quot;</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>    <span class="fu">print</span> ( base [<span class="dv">91</span>, ])</span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a>    <span class="fu">foto</span> (<span class="dv">52</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a>  }  </span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>}</span></code></pre></div>
+<ul>
+<li>Se realizó para hongos y bacterias</li>
+</ul>
+</div>
+<div id="funciones-3" class="slide section level2">
+<h1>Funciones</h1>
+<h3 id="información-según-el-género-tipo-de-muestra-y-observación">Información
+según el género, tipo de muestra y observación</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>generob <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  tipo_de_muestra <span class="ot">&lt;-</span> <span class="fu">readline</span> (<span class="at">prompt =</span> <span class="st">&quot;Tienes algún tipo de muestra que te gustaría evaluar? Tenemos disponibilidad demuestras de frotis, líquido, raices y suelo. Por favor escribe el tipo de muestra (si no tienes un tipo de muestra en específico escribe la palabra no): &quot;</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  </span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  genero <span class="ot">&lt;-</span> <span class="fu">readline</span> (<span class="at">prompt =</span> <span class="st">&quot;Para buscar especificamente por genero, escribe el nombre de aquel de tu interés, actualmente poseemos información de 25 géneros de bacterias:&quot;</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  </span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>  sobservacion <span class="ot">&lt;-</span> <span class="fu">readline</span> (<span class="at">prompt =</span> <span class="st">&quot;en cuanto a qué es lo que quieres observar, te gustaria ver la presencia o aislar exclusivamente a este microorganismo? (si no lo tienes definifo aún, escribe no)&quot;</span> )</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>  </span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>  <span class="cf">if</span> ((( genero <span class="sc">==</span> <span class="st">&quot;escherichia&quot;</span> <span class="sc">|</span> genero <span class="sc">==</span> <span class="st">&quot;Escherichia&quot;</span> )<span class="sc">&amp;</span>( tipo_de_muestra <span class="sc">==</span> <span class="st">&quot;no&quot;</span> <span class="sc">|</span> tipo_de_muestra <span class="sc">==</span> <span class="st">&quot;No&quot;</span>) <span class="sc">&amp;</span> (observacion <span class="sc">==</span> <span class="st">&quot;no&quot;</span> <span class="sc">|</span> observacion <span class="sc">==</span> <span class="st">&quot;No&quot;</span>))){</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>    <span class="fu">print</span> (<span class="st">&quot;aquí tienes un poco de información que te puede ser de utilidad&quot;</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>    <span class="fu">print</span> ( <span class="fu">as.list</span> (base [<span class="dv">1</span>, ]))</span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>    <span class="fu">print</span> ( <span class="fu">as.list</span> (base [<span class="dv">2</span>, ]))</span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>    <span class="fu">foto</span> (<span class="dv">1</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span>(((genero <span class="sc">==</span> <span class="st">&quot;escherichia&quot;</span> <span class="sc">|</span> genero <span class="sc">==</span> <span class="st">&quot;Escherichia&quot;</span>) <span class="sc">&amp;</span> (tipo_de_muestra <span class="sc">==</span> <span class="st">&quot;frotis&quot;</span> <span class="sc">|</span> tipo_de_muestra <span class="sc">==</span> <span class="st">&quot;Frotis&quot;</span>) <span class="sc">&amp;</span> (observacion <span class="sc">==</span> <span class="st">&quot;presencia&quot;</span> <span class="sc">|</span> observacion <span class="sc">==</span> <span class="st">&quot;Presencia&quot;</span>))){</span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>    <span class="fu">print</span> (<span class="st">&quot;aquí tienes un poco de información que te puede ser de utilidad&quot;</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>    <span class="fu">print</span> (<span class="fu">as.list</span> (base [<span class="dv">1</span>, ]))</span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>    <span class="fu">foto</span> (<span class="dv">1</span>)</span></code></pre></div>
+<ul>
+<li>Se realizó para hongos y bacterias</li>
+<li>Bacterias = 209 líneas de código</li>
+<li>Hongos = 337 líneas de código</li>
+</ul>
+</div>
+<div id="funciones-4" class="slide section level2">
+<h1>Funciones</h1>
+<h3 id="para-ejecutar-la-función-principal-y-que-desencadena-el-programa">Para
+ejecutar la función principal y que desencadena el programa</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>cultivnet <span class="ot">&lt;-</span> <span class="cf">function</span> () {</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>  micro <span class="ot">&lt;-</span> (<span class="fu">readline</span> (<span class="at">prompt =</span> <span class="st">&quot;Muy bien, comenzaremos por preguntar qué tipo de</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="st">                          microorganismo te gustaria observar o encontrar, tenemos datos </span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="st">                          disponibles para bacterias y hongos, escribe cuál de los te interesa: &quot;</span>))</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>  <span class="cf">if</span> ( (micro <span class="sc">==</span> <span class="st">&quot;bacterias&quot;</span><span class="sc">|</span> micro <span class="sc">==</span> <span class="st">&quot;bacteria&quot;</span> <span class="sc">|</span> micro <span class="sc">==</span> <span class="st">&quot;Bacteria&quot;</span> <span class="sc">|</span> micro <span class="sc">==</span> <span class="st">&quot;Bacterias&quot;</span> )) {</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>    <span class="fu">bacteria</span> ()</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> ( (micro <span class="sc">==</span> <span class="st">&quot;hongos&quot;</span><span class="sc">|</span> micro <span class="sc">==</span> <span class="st">&quot;hongos&quot;</span> <span class="sc">|</span> micro <span class="sc">==</span> <span class="st">&quot;Hongos&quot;</span> <span class="sc">|</span> micro <span class="sc">==</span> <span class="st">&quot;Hongo&quot;</span> )) {</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>    <span class="fu">hongo</span> ()</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>    <span class="fu">print</span> (<span class="st">&quot;Lo sentimos, esa entrada no es válida para este programa, estamos actualizando los</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="st">           datos para tener una amplia diversidad de microorganismos dentro, gracias!!&quot;</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a>  }</span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a>  </span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">cultivnet</span> ()</span></code></pre></div>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->
