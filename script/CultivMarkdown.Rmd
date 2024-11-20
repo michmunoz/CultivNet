@@ -10,8 +10,39 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ## CultivNet
+__Objetivos:__
+
+- Crear un código sencillo de emplear y entender con fines aplicables dentro de la licenciatura en Microbiología
+- Aplicar los conocimientos adquiridos dentro del curso para desarrollar una herramienta de ayuda en otras materias
+
+__Qué es CultivNet?__
+
+- Es una herramienta que proporciona características básicas para el manejo de bacterias y hongos en un laboratorio de docencia a nivel licenciatura
+- La base de datos de CultivNet cuenta con los 50 organismos más empleados en laboratorios de bioseguridad nivel 1, o bien en laboratorios de docencia
+- Proporciona informacion de los medios y condiciones de cultivo con respecto al género, tipo de muestra a emplear y objetivo u observación que se quiere realizar
+
+## Base de datos
+
+```{r, echo=TRUE, eval=FALSE}
+base <- read.csv("datos/base.csv")
+View (base)
+```
+- 25 géneros de bacterias
+- 25 géneros de hongos
+- 92 renglones, 9 columnas: 
+1. id
+2. organismo
+3. género
+4. características
+5. tipo de muestra
+6. observación
+7. medio
+8. temperatura
+9. preparación
 
 
+## Funciones
+### Para desplegar la imagen correspondiente en la pestaña de Plots
 ```{r, echo=TRUE, eval=FALSE}
 library(jpeg)
 library(grid)
@@ -23,4 +54,100 @@ foto <- function (a) {
 
 foto(48)
 ```
+
+## Funciones
+### Definiendo el organismo
+
+```{r, echo=TRUE, eval=FALSE}
+bacteria <- function () {
+  bac <- readline (prompt = "ahora, ya sabes en sí qué genero de bacterias quieres observar?,
+                   recuerda que te daremos la información a nivel de género.
+                   Por favor introduce el género, si no tienes alguno en específico solo escribe no : " )
+  if ((bac == "no" | bac=="No")) {
+    diversidadb ()
+  } else {
+    generob ()
+  }
+  
+}
+```
+
+- Se realizó para hongos y bacterias
+
+## Funciones
+### Para trabajar con la diversidad, esto al no tener un género específico, pero sí un tipo de organismo
+
+```{r, echo=TRUE, eval=FALSE}
+diversidadh <- function(){ 
+  muestra <- readline (prompt = "entonces, lo que necesitas es conocer la diversidad dentro de una muestra,
+                       pero dinos, de qué tipo es tu muestra?, tenemos datos para muestra en formato liquido, alimentos
+                       o de suelo: ")
+  if (( muestra == "liquido" | muestra == "líquido" | muestra == "Líquido" | muestra== "Liquido")){
+    print ("aquí tienes un poco de información que te puede ser de utilidad")
+    print ( base [90, ])
+    foto (52)
+  } else if ((muestra == "alimento" | muestra == "alimentos" | muestra == "Alimento" | muestra == "Alimentos")){
+    print ("aquí tienes un poco de información que te puede ser de utilidad")
+    print ( base [92, ])
+    foto (52)
+  } else if ((muestra == "suelo" | muestra == "Suelo")){
+    print ("aquí tienes un poco de información que te puede ser de utilidad")
+    print ( base [91, ])
+    foto (52)
+  }  
+}
+```
+
+- Se realizó para hongos y bacterias
+
+## Funciones
+### Información según el género, tipo de muestra y observación
+
+```{r, echo=TRUE, eval=FALSE}
+generob <- function(){
+  tipo_de_muestra <- readline (prompt = "Tienes algún tipo de muestra que te gustaría evaluar? Tenemos disponibilidad demuestras de frotis, líquido, raices y suelo. Por favor escribe el tipo de muestra (si no tienes un tipo de muestra en específico escribe la palabra no): ")
+  
+  genero <- readline (prompt = "Para buscar especificamente por genero, escribe el nombre de aquel de tu interés, actualmente poseemos información de 25 géneros de bacterias:")
+  
+  sobservacion <- readline (prompt = "en cuanto a qué es lo que quieres observar, te gustaria ver la presencia o aislar exclusivamente a este microorganismo? (si no lo tienes definifo aún, escribe no)" )
+  
+  if ((( genero == "escherichia" | genero == "Escherichia" )&( tipo_de_muestra == "no" | tipo_de_muestra == "No") & (observacion == "no" | observacion == "No"))){
+    print ("aquí tienes un poco de información que te puede ser de utilidad")
+    print ( as.list (base [1, ]))
+    print ( as.list (base [2, ]))
+    foto (1)
+  } else if(((genero == "escherichia" | genero == "Escherichia") & (tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis") & (observacion == "presencia" | observacion == "Presencia"))){
+    print ("aquí tienes un poco de información que te puede ser de utilidad")
+    print (as.list (base [1, ]))
+    foto (1)
+```
+
+- Se realizó para hongos y bacterias
+- Bacterias = 209 líneas de código
+- Hongos = 337 líneas de código
+
+## Funciones
+### Para ejecutar la función principal y que desencadena el programa
+
+```{r, echo=TRUE, eval=FALSE}
+cultivnet <- function () {
+  micro <- (readline (prompt = "Muy bien, comenzaremos por preguntar qué tipo de
+                          microorganismo te gustaria observar o encontrar, tenemos datos 
+                          disponibles para bacterias y hongos, escribe cuál de los te interesa: "))
+  if ( (micro == "bacterias"| micro == "bacteria" | micro == "Bacteria" | micro == "Bacterias" )) {
+    bacteria ()
+  } else if ( (micro == "hongos"| micro == "hongos" | micro == "Hongos" | micro == "Hongo" )) {
+    hongo ()
+  } else {
+    print ("Lo sentimos, esa entrada no es válida para este programa, estamos actualizando los
+           datos para tener una amplia diversidad de microorganismos dentro, gracias!!")
+  }
+  
+}
+```
+
+```{r, echo=TRUE, eval=FALSE}
+cultivnet ()
+```
+
 
