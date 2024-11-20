@@ -19,7 +19,7 @@ __Qué es CultivNet?__
 
 - Es una herramienta que proporciona características básicas para el manejo de bacterias y hongos en un laboratorio de docencia a nivel licenciatura
 - La base de datos de CultivNet cuenta con los 50 organismos más empleados en laboratorios de bioseguridad nivel 1, o bien en laboratorios de docencia
-- Proporciona informacion de los medios y condiciones de cultivo con respecto al género, tipo de muestra a emplear y objetivo u observación que se quiere realizar
+- Proporciona información de los medios y condiciones de cultivo con respecto al género, tipo de muestra a emplear y objetivo u observación que se quiere realizar
 
 ## Base de datos
 
@@ -62,7 +62,7 @@ foto(48)
 bacteria <- function () {
   bac <- readline (prompt = "ahora, ya sabes en sí qué genero de bacterias quieres observar?,
                    recuerda que te daremos la información a nivel de género.
-                   Por favor introduce el género, si no tienes alguno en específico solo escribe no : " )
+                   Por favor escribe si o no : " )
   if ((bac == "no" | bac=="No")) {
     diversidadb ()
   } else {
@@ -78,22 +78,22 @@ bacteria <- function () {
 ### Para trabajar con la diversidad, esto al no tener un género específico, pero sí un tipo de organismo
 
 ```{r, echo=TRUE, eval=FALSE}
-diversidadh <- function(){ 
+diversidadb <- function(){ 
   muestra <- readline (prompt = "entonces, lo que necesitas es conocer la diversidad dentro de una muestra,
-                       pero dinos, de qué tipo es tu muestra?, tenemos datos para muestra en formato liquido, alimentos
+                       pero dinos, de qué tipo es tu muestra?, tenemos datos para muestra en formato liquido, frotis
                        o de suelo: ")
   if (( muestra == "liquido" | muestra == "líquido" | muestra == "Líquido" | muestra== "Liquido")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
-    print ( base [90, ])
-    foto (52)
-  } else if ((muestra == "alimento" | muestra == "alimentos" | muestra == "Alimento" | muestra == "Alimentos")){
+    print ( as.list (base [37, ]))
+    foto (26)
+  } else if ((muestra == "frotis" | muestra == "Frotis")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
-    print ( base [92, ])
-    foto (52)
+    print ( as.list (base [38, ]))
+    foto (26)
   } else if ((muestra == "suelo" | muestra == "Suelo")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
-    print ( base [91, ])
-    foto (52)
+    print ( as.list (base [39, ]))
+    foto (26)
   }  
 }
 ```
@@ -145,6 +145,8 @@ cultivnet <- function () {
   
 }
 ```
+
+__Para correr CultivNet__
 
 ```{r, echo=TRUE, eval=FALSE}
 cultivnet ()

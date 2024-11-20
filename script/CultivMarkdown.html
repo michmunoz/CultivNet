@@ -545,7 +545,7 @@ licenciatura</li>
 <li>La base de datos de CultivNet cuenta con los 50 organismos más
 empleados en laboratorios de bioseguridad nivel 1, o bien en
 laboratorios de docencia</li>
-<li>Proporciona informacion de los medios y condiciones de cultivo con
+<li>Proporciona información de los medios y condiciones de cultivo con
 respecto al género, tipo de muestra a emplear y objetivo u observación
 que se quiere realizar</li>
 </ul>
@@ -591,7 +591,7 @@ desplegar la imagen correspondiente en la pestaña de Plots</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>bacteria <span class="ot">&lt;-</span> <span class="cf">function</span> () {</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  bac <span class="ot">&lt;-</span> <span class="fu">readline</span> (<span class="at">prompt =</span> <span class="st">&quot;ahora, ya sabes en sí qué genero de bacterias quieres observar?,</span></span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="st">                   recuerda que te daremos la información a nivel de género.</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="st">                   Por favor introduce el género, si no tienes alguno en específico solo escribe no : &quot;</span> )</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="st">                   Por favor escribe si o no : &quot;</span> )</span>
 <span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  <span class="cf">if</span> ((bac <span class="sc">==</span> <span class="st">&quot;no&quot;</span> <span class="sc">|</span> bac<span class="sc">==</span><span class="st">&quot;No&quot;</span>)) {</span>
 <span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>    <span class="fu">diversidadb</span> ()</span>
 <span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
@@ -608,22 +608,22 @@ desplegar la imagen correspondiente en la pestaña de Plots</h3>
 <h3 id="para-trabajar-con-la-diversidad-esto-al-no-tener-un-género-específico-pero-sí-un-tipo-de-organismo">Para
 trabajar con la diversidad, esto al no tener un género específico, pero
 sí un tipo de organismo</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>diversidadh <span class="ot">&lt;-</span> <span class="cf">function</span>(){ </span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>diversidadb <span class="ot">&lt;-</span> <span class="cf">function</span>(){ </span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>  muestra <span class="ot">&lt;-</span> <span class="fu">readline</span> (<span class="at">prompt =</span> <span class="st">&quot;entonces, lo que necesitas es conocer la diversidad dentro de una muestra,</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="st">                       pero dinos, de qué tipo es tu muestra?, tenemos datos para muestra en formato liquido, alimentos</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="st">                       pero dinos, de qué tipo es tu muestra?, tenemos datos para muestra en formato liquido, frotis</span></span>
 <span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="st">                       o de suelo: &quot;</span>)</span>
 <span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>  <span class="cf">if</span> (( muestra <span class="sc">==</span> <span class="st">&quot;liquido&quot;</span> <span class="sc">|</span> muestra <span class="sc">==</span> <span class="st">&quot;líquido&quot;</span> <span class="sc">|</span> muestra <span class="sc">==</span> <span class="st">&quot;Líquido&quot;</span> <span class="sc">|</span> muestra<span class="sc">==</span> <span class="st">&quot;Liquido&quot;</span>)){</span>
 <span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>    <span class="fu">print</span> (<span class="st">&quot;aquí tienes un poco de información que te puede ser de utilidad&quot;</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>    <span class="fu">print</span> ( base [<span class="dv">90</span>, ])</span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>    <span class="fu">foto</span> (<span class="dv">52</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> ((muestra <span class="sc">==</span> <span class="st">&quot;alimento&quot;</span> <span class="sc">|</span> muestra <span class="sc">==</span> <span class="st">&quot;alimentos&quot;</span> <span class="sc">|</span> muestra <span class="sc">==</span> <span class="st">&quot;Alimento&quot;</span> <span class="sc">|</span> muestra <span class="sc">==</span> <span class="st">&quot;Alimentos&quot;</span>)){</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>    <span class="fu">print</span> ( <span class="fu">as.list</span> (base [<span class="dv">37</span>, ]))</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>    <span class="fu">foto</span> (<span class="dv">26</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> ((muestra <span class="sc">==</span> <span class="st">&quot;frotis&quot;</span> <span class="sc">|</span> muestra <span class="sc">==</span> <span class="st">&quot;Frotis&quot;</span>)){</span>
 <span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>    <span class="fu">print</span> (<span class="st">&quot;aquí tienes un poco de información que te puede ser de utilidad&quot;</span>)</span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>    <span class="fu">print</span> ( base [<span class="dv">92</span>, ])</span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>    <span class="fu">foto</span> (<span class="dv">52</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>    <span class="fu">print</span> ( <span class="fu">as.list</span> (base [<span class="dv">38</span>, ]))</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>    <span class="fu">foto</span> (<span class="dv">26</span>)</span>
 <span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> ((muestra <span class="sc">==</span> <span class="st">&quot;suelo&quot;</span> <span class="sc">|</span> muestra <span class="sc">==</span> <span class="st">&quot;Suelo&quot;</span>)){</span>
 <span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>    <span class="fu">print</span> (<span class="st">&quot;aquí tienes un poco de información que te puede ser de utilidad&quot;</span>)</span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>    <span class="fu">print</span> ( base [<span class="dv">91</span>, ])</span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a>    <span class="fu">foto</span> (<span class="dv">52</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>    <span class="fu">print</span> ( <span class="fu">as.list</span> (base [<span class="dv">39</span>, ]))</span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a>    <span class="fu">foto</span> (<span class="dv">26</span>)</span>
 <span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a>  }  </span>
 <span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>}</span></code></pre></div>
 <ul>
@@ -674,6 +674,7 @@ ejecutar la función principal y que desencadena el programa</h3>
 <span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a>  }</span>
 <span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a>  </span>
 <span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>Para correr CultivNet</strong></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">cultivnet</span> ()</span></code></pre></div>
 </div>
 

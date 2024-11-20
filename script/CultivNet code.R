@@ -44,14 +44,14 @@ foto <- function (a) {
   grid.raster(imagen)
 }
 
-foto(9)
+foto(48)
 
 # función para trabajar exclusivamente con bacterias
 
 bacteria <- function () {
   bac <- readline (prompt = "ahora, ya sabes en sí qué genero de bacterias quieres observar?,
                    recuerda que te daremos la información a nivel de género.
-                   Por favor introduce el género, si no tienes alguno en específico solo escribe no : " )
+                   Por favor escribe si o no : " )
   if ((bac == "no" | bac=="No")) {
     diversidadb ()
   } else {
@@ -59,13 +59,13 @@ bacteria <- function () {
   }
   
 }
-bacteria()
+
 # función para trabajar exclusivamente con hongos
 
 hongo <- function () {
   hon <- readline (prompt = "ahora, ya sabes en sí qué género de hongos quieres observar?,
                    recuerda que te daremos la información a nivel de género.
-                   Por favor introduce el género, si no tienes alguno en específico solo escribe no : " )
+                    Por favor escribe si o no  : " )
   if ((hon == "no" | hon== "No")) {
     diversidadh ()
   }
@@ -82,15 +82,15 @@ diversidadb <- function(){
                        o de suelo: ")
   if (( muestra == "liquido" | muestra == "líquido" | muestra == "Líquido" | muestra== "Liquido")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
-    print ( base [37, ])
+    print ( as.list (base [37, ]))
     foto (26)
   } else if ((muestra == "frotis" | muestra == "Frotis")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
-    print ( base [38, ])
+    print ( as.list (base [38, ]))
     foto (26)
   } else if ((muestra == "suelo" | muestra == "Suelo")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
-    print ( base [39, ])
+    print ( as.list (base [39, ]))
     foto (26)
   }  
 }
@@ -103,15 +103,15 @@ diversidadh <- function(){
                        o de suelo: ")
   if (( muestra == "liquido" | muestra == "líquido" | muestra == "Líquido" | muestra== "Liquido")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
-    print ( base [90, ])
+    print ( as.list(base [90, ]))
     foto (52)
   } else if ((muestra == "alimento" | muestra == "alimentos" | muestra == "Alimento" | muestra == "Alimentos")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
-    print ( base [92, ])
+    print ( as.list (base [92, ]))
     foto (52)
   } else if ((muestra == "suelo" | muestra == "Suelo")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
-    print ( base [91, ])
+    print ( as.list (base [91, ]))
     foto (52)
   }  
 }
@@ -123,7 +123,7 @@ generob <- function(){
   
   genero <- readline (prompt = "Para buscar especificamente por genero, escribe el nombre de aquel de tu interés, actualmente poseemos información de 25 géneros de bacterias:")
   
-  sobservacion <- readline (prompt = "en cuanto a qué es lo que quieres observar, te gustaria ver la presencia o aislar exclusivamente a este microorganismo? (si no lo tienes definifo aún, escribe no)" )
+  observacion <- readline (prompt = "en cuanto a qué es lo que quieres observar, te gustaria ver la presencia o aislar exclusivamente a este microorganismo? (si no lo tienes definido aún, escribe no)" )
   
   if ((( genero == "escherichia" | genero == "Escherichia" )&( tipo_de_muestra == "no" | tipo_de_muestra == "No") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
@@ -171,7 +171,7 @@ generob <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [7, ]))
     foto (3)
-  } else if (((genero == "pseudomonas" | genero == "Pseudomonas") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  } else if (((genero == "pseudomonas" | genero == "Pseudomonas") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [8, ]))
     print ( as.list(base [9, ]))
@@ -285,11 +285,11 @@ generob <- function(){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [28, ]))
     foto (19)
-  } else if (((genero == "serratia" | genero == "Serratia") & (tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis") & (obsevacion == "aislar" | observacion== "Aislar"))){
+  } else if (((genero == "serratia" | genero == "Serratia") & (tipo_de_muestra == "frotis" | tipo_de_muestra == "Frotis") & (observacion == "aislar" | observacion== "Aislar"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [29, ]))
     foto (19)
-  } else if (((genero == "lactobacillus" | genero == "Lactobacillus") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (obsevacion == "no" | observacion == "No"))){
+  } else if (((genero == "lactobacillus" | genero == "Lactobacillus") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print ( as.list(base [30, ]))
     print ( as.list(base [31, ]))
@@ -332,8 +332,12 @@ generob <- function(){
 #función generoh para conocer las necesidades del usiario y proporcionar la infomación de los hongos
 
 generoh <- function(){ 
-  muestra <- readline (prompt = "Para buscar especificamente por género, escribe el nombre de aquel de tu interés, 
-                       actualmente poseemos información de 25 géneros de hongos y levaduras:")
+  tipo_de_muestra <- readline (prompt = "Tienes algún tipo de muestra que te gustaría evaluar? Tenemos disponibilidad demuestras de suelo, líquido, alimentos y granos. Por favor escribe el tipo de muestra (si no tienes un tipo de muestra en específico escribe la palabra no): ")
+  
+  genero <- readline (prompt = "Para buscar especificamente por genero, escribe el nombre de aquel de tu interés, actualmente poseemos información de 25 géneros de hongos:")
+  
+  observacion <- readline (prompt = "en cuanto a qué es lo que quieres observar, te gustaria ver la presencia o aislar exclusivamente a este microorganismo? (si no lo tienes definido aún, escribe no)" )
+
   if (( genero == "aspergillus" | genero == "Aspergillus")){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print (as.list(base [40, ]))
@@ -345,7 +349,7 @@ generoh <- function(){
     print (as.list(base [40, ]))
     print (as.list(base [41, ]))
     foto (27)
-  } else if(((genero == "aspergillus" | genero == "Aspergillus") & (observacion == "esporulacion" | obervacion == "Esporulacion"))){
+  } else if(((genero == "aspergillus" | genero == "Aspergillus") & (observacion == "esporulacion" | observacion == "Esporulacion"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print (as.list(base [40, ]))
     foto (27)
@@ -385,11 +389,11 @@ generoh <- function(){
     print (as.list( base [46, ]))
     print ( as.list(base [47, ]))
     foto (29)
-  } else if (((genero == "sacharomyces" | genero == "Sacharomyces") & (observacion == "esporulacion" | obervacion == "Esporulacion"))){
+  } else if (((genero == "sacharomyces" | genero == "Sacharomyces") & (observacion == "esporulacion" | observacion == "Esporulacion"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print (as.list( base [46, ]))
     foto (29)
-  } else if (((genero == "sacharomyces" | genero == "Sacharomyces") & (observacion == "presencia" | obervacion == "Presencia"))){
+  } else if (((genero == "sacharomyces" | genero == "Sacharomyces") & (observacion == "presencia" | observacion == "Presencia"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print (as.list(base [47, ]))
     foto (29)
