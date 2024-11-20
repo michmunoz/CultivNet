@@ -338,13 +338,13 @@ generoh <- function(){
   
   observacion <- readline (prompt = "en cuanto a qué es lo que quieres observar, te gustaria ver la presencia o aislar exclusivamente a este microorganismo? (si no lo tienes definido aún, escribe no)" )
 
-  if (((genero == "aspergillus" | genero == "Aspergillus") & (tipo.de.muestra == "no" | tipo.de.muestra == "No") & (observacion == "no" | observacion == "No"))){
+  if (((genero == "aspergillus" | genero == "Aspergillus") & (tipo_de_muestra == "no" | tipo_de_muestra == "No") & (observacion == "no" | observacion == "No"))){
     print ("aquí tienes un poco de información que te puede ser de utilidad")
     print (as.list(base [40, ]))
     print (as.list(base [41, ]))
     print (as.list(base [42, ]))
     foto (27)
-  } else if(((genero == "aspergillus" | genero == "Aspergillus") & (tipo.de.muestra == "suelo" | tipo.de.muestra == "Suelo") & (observacion == "no" | observacion == "No"))){
+  } else if(((genero == "aspergillus" | genero == "Aspergillus") & (tipo_de_muestra == "suelo" | tipo_de_muestra == "Suelo") & (observacion == "no" | observacion == "No"))){
     print (as.list(base [40, ]))
     print (as.list(base [41, ]))
     foto (27)
